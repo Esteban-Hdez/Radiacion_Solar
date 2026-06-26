@@ -1,2 +1,30 @@
+# ===== Credenciales / entorno =====
 .env
-/Data
+.env.*
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# ===== Caché de la API =====
+cache/
+
+# ===== Datos (Data/) =====
+# Por defecto se ignora TODO Data...
+/Data/*
+# ...pero se rastrean SOLO las dos regiones de interés (su estructura + textos).
+!/Data/Tamaulipas/
+!/Data/Puerto_Rico/
+
+# Dentro de las regiones NO se versionan datos pesados ni reproducibles:
+# crudos descargados (miles de parquet, re-descargables vía pipeline)
+Data/**/crudos_api/
+# datasets consolidados y cualquier binario grande (se comparten aparte / se regeneran)
+Data/**/*.parquet
+Data/**/*.h5
+Data/**/*.log
+
+# Históricos (no interesan en el repo)
+Data/Tamaulipas/historico_4501_con_mar/
+Data/Puerto_Rico/historico_2480_0.02/
