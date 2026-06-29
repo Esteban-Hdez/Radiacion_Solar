@@ -44,12 +44,69 @@ python -m Utils.descarga_regiones --regiones puerto_rico --anios 2024 2025
 
 # Años homogéneos de 8760 h (sin 29-feb):
 python -m Utils.descarga_regiones --regiones tamaulipas --anios 2024 --excluir-bisiesto
+```
 
-# Desatendido (segundo plano) con log:
+### Ejecución desatendida por SSH (Ubuntu — máquina principal)
+
+La descarga dura horas, así que en el servidor **siempre** hay que lanzarla de forma
+que **sobreviva al cierre de la sesión SSH**. Hay dos formas; **`tmux` es la
+recomendada** porque además permite volver a ver la consola en vivo.
+
+**Opción A — `tmux` (recomendada).** El proceso vive en una sesión que sigue
+corriendo aunque se caiga el SSH:
+
+```bash
+conda activate rs
+tmux new -s descarga                       # abre la sesión "descarga"
+# (ya dentro de tmux):
+PYTHONUNBUFFERED=1 python -m Utils.descarga_regiones \
+  --regiones tamaulipas puerto_rico --anios 2024 --metadatos todos \
+  | tee Data/registro_descarga.log
+# Desconectar dejándolo corriendo:  Ctrl-b  luego  d
+```
+```bash
+# En cualquier momento (incluso tras reconectar el SSH) volver a la consola:
+tmux attach -t descarga
+tmux ls                                     # listar sesiones activas
+```
+
+**Opción B — `nohup` (sin tmux).** Queda en segundo plano y se sigue por el log:
+
+```bash
+conda activate rs
 PYTHONUNBUFFERED=1 nohup python -m Utils.descarga_regiones \
   --regiones tamaulipas puerto_rico --anios 2024 --metadatos todos \
   > Data/registro_descarga.log 2>&1 &
-tail -f Data/registro_descarga.log
+disown                                       # lo desliga de la terminal/SSH
+tail -f Data/registro_descarga.log           # seguir el progreso (Ctrl-C solo corta el tail)
+```
+```bash
+# Verificar que sigue vivo / detenerlo:
+pgrep -af "descarga_regiones"
+kill <PID>                                   # parada segura: es reanudable con el mismo comando
+```
+
+> Reanudable: si la conexión a la API se corta o se agota la cuota diaria (429), se
+> relanza el **mismo** comando y continúa desde donde quedó.
+
+### Windows (ocasional)
+
+Gracias a la corrección de codificación en `__main__.py`, ya **no** hace falta forzar
+UTF-8; basta redirigir a un log. En Windows no hay SSH, así que solo se busca dejarlo
+en segundo plano.
+
+```bat
+:: cmd.exe — en primer plano con log
+set PYTHONUNBUFFERED=1 && python -m Utils.descarga_regiones --regiones tamaulipas puerto_rico --anios 2023 --metadatos todos > Data\registro_descarga.log 2>&1
+```
+```powershell
+# PowerShell — en segundo plano (sobrevive a cerrar esta consola, no al cierre de sesión de Windows)
+$env:PYTHONUNBUFFERED = "1"
+Start-Process -NoNewWindow python `
+  -ArgumentList "-m","Utils.descarga_regiones","--regiones","tamaulipas","puerto_rico","--anios","2024","--metadatos","todos" `
+  -RedirectStandardOutput "Data\registro_descarga.log" `
+  -RedirectStandardError  "Data\registro_descarga.err"
+Get-Content Data\registro_descarga.log -Wait      # equivalente a tail -f
 ```
 
 | Opción | Valores | Para qué |
