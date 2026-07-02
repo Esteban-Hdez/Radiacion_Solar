@@ -63,6 +63,18 @@ import pandas as pd
 import pyarrow.parquet as pq
 import matplotlib.pyplot as plt
 
+
+def _figsize_geografico(ancho, alto, base=10.0, minimo=4.0):
+    """Tamaño de figura proporcional a la extensión geográfica (ya corregida
+    por latitud), para que regiones anchas y bajas (p.ej. Puerto Rico) o altas
+    y estrechas (p.ej. Tamaulipas) conserven su forma en vez de estirarse a un
+    lienzo fijo. Se limita el lado mayor a `base` pulgadas."""
+    if ancho <= 0 or alto <= 0:
+        return base, base
+    escala = base / max(ancho, alto)
+    return max(ancho * escala, minimo), max(alto * escala, minimo)
+
+
 # --------------------------------------------------------------------------- #
 # Diccionarios y metadatos del NSRDB (ver Data/Tamaulipas/REFERENCIA_NSRDB.md)
 # --------------------------------------------------------------------------- #
@@ -144,7 +156,7 @@ class AnalizadorSolar:
     - Los métodos de gráfica devuelven el `matplotlib.figure.Figure` (el
       notebook lo muestra solo). Pasa `guardar='ruta.png'` para escribirlo.
     """
-
+    
     PLANTILLA = ('Data/{region}/{anio}/Finales/completo/'
                  'dataset_{region_low}_completo_24h_{anio}.parquet')
     META_PLANTILLA = 'Data/{region}/metadata_nodos_{region_low}.csv'
@@ -997,11 +1009,17 @@ class AnalizadorSolar:
         print(f"Outliers de {variable} ({agg}) por nodo [{metodo}: {ref}]: "
               f"{len(out)} de {len(base)} nodos")
         if graficar and self.meta is not None:
-            fig, ax = plt.subplots(figsize=(9, 11))
+            lat_media = float(base['latitude'].mean())
+            aspecto = 1.0 / np.cos(np.deg2rad(lat_media))
+            ancho_g = base['longitude'].max() - base['longitude'].min()
+            alto_g = (base['latitude'].max() - base['latitude'].min()) * aspecto
+            figw, figh = _figsize_geografico(ancho_g, alto_g)
+            fig, ax = plt.subplots(figsize=(figw, figh))
             ax.scatter(base['longitude'], base['latitude'], c=base[agg],
                        cmap='Spectral_r', s=12)
             ax.scatter(out['longitude'], out['latitude'], facecolors='none',
                        edgecolors='red', s=60, lw=1.5, label='outlier')
+            ax.set_aspect(aspecto)
             ax.set_title(f"Nodos atípicos de {variable} ({agg}) — {self.region} {self.anio}")
             ax.set_xlabel("Longitud"); ax.set_ylabel("Latitud")
             ax.legend(); ax.grid(alpha=.3)
@@ -1184,19 +1202,31 @@ class AnalizadorSolar:
             norm = mcolors.TwoSlopeNorm(vmin=-m, vcenter=0, vmax=m)
             vmin = vmax = None
 
-        fig, ax = plt.subplots(figsize=(9, 12))
-        sc = ax.scatter(mapa['longitude'], mapa['latitude'], c=mapa['valor'],
-                        cmap=cmap, s=s, alpha=.9, edgecolors='none',
-                        norm=norm, vmin=vmin, vmax=vmax, zorder=2)
         pad = 0.1
         xlim = (self.meta['longitude'].min() - pad, self.meta['longitude'].max() + pad)
         ylim = (self.meta['latitude'].min() - pad, self.meta['latitude'].max() + pad)
+        # Aspecto geográfico: 1° de longitud mide cos(lat) veces 1° de latitud.
+        # Fijarlo evita que regiones anchas y bajas (p.ej. Puerto Rico) se vean
+        # deformes al estirarse dentro de un lienzo vertical.
+        lat_media = float(np.mean(ylim))
+        aspecto = 1.0 / np.cos(np.deg2rad(lat_media))
+        ancho_grados = (xlim[1] - xlim[0])
+        alto_grados = (ylim[1] - ylim[0]) * aspecto
+        figw, figh = _figsize_geografico(ancho_grados, alto_grados)
+
+        fig, ax = plt.subplots(figsize=(figw, figh))
+        sc = ax.scatter(mapa['longitude'], mapa['latitude'], c=mapa['valor'],
+                        cmap=cmap, s=s, alpha=.9, edgecolors='none',
+                        norm=norm, vmin=vmin, vmax=vmax, zorder=2)
         ax.set_xlim(*xlim); ax.set_ylim(*ylim)
+        ax.set_aspect(aspecto)
         try:
             import contextily as cx
             cx.add_basemap(ax, crs='EPSG:4326',
-                           source=cx.providers.CartoDB.Positron, alpha=.85, zorder=1)
-            ax.set_aspect('auto'); ax.set_xlim(*xlim); ax.set_ylim(*ylim)
+                           source=cx.providers.CartoDB.Positron, alpha=.85,
+                           attribution=False, zorder=1)
+            ax.set_xlim(*xlim); ax.set_ylim(*ylim)
+            ax.set_aspect(aspecto)
         except Exception as e:
             print(f"(sin mapa base: {e})")
         plt.colorbar(sc, ax=ax, label=etiqueta_cb, fraction=0.046, pad=0.04)

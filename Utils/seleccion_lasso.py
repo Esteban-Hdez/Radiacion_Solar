@@ -80,7 +80,8 @@ class SelectorNodos:
             try:
                 import contextily as cx
                 cx.add_basemap(self.ax, crs='EPSG:4326',
-                               source=cx.providers.CartoDB.Positron, alpha=0.85, zorder=1)
+                               source=cx.providers.CartoDB.Positron, alpha=0.85,
+                               attribution=False, zorder=1)
                 self.ax.set_aspect('auto')
                 self.ax.set_xlim(self.xy[:, 0].min() - pad, self.xy[:, 0].max() + pad)
                 self.ax.set_ylim(self.xy[:, 1].min() - pad, self.xy[:, 1].max() + pad)

@@ -75,7 +75,7 @@ tmux ls                                     # listar sesiones activas
 ```bash
 conda activate rs
 PYTHONUNBUFFERED=1 nohup python -m Utils.descarga_regiones \
-  --regiones tamaulipas puerto_rico --anios 2024 --metadatos todos \
+  --regiones tamaulipas puerto_rico --anios 2020 2021 --metadatos todos \
   > Data/registro_descarga.log 2>&1 &
 disown                                       # lo desliga de la terminal/SSH
 tail -f Data/registro_descarga.log           # seguir el progreso (Ctrl-C solo corta el tail)

@@ -56,6 +56,7 @@ Uso rápido (línea de comandos)
 import os
 import time
 import argparse
+import numpy as np
 import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
@@ -155,6 +156,10 @@ class MapaEspacial:
         pad = 0.1
         self.xlim = (self.meta['longitude'].min() - pad, self.meta['longitude'].max() + pad)
         self.ylim = (self.meta['latitude'].min() - pad, self.meta['latitude'].max() + pad)
+        # Aspecto geográfico: 1° de longitud mide cos(lat) veces 1° de latitud.
+        # Fijarlo conserva la forma real de la región (regiones anchas y bajas
+        # como Puerto Rico dejan de verse deformes al no estirarse a la celda).
+        self.aspecto = 1.0 / np.cos(np.deg2rad(float(np.mean(self.ylim))))
 
         # Columnas disponibles (para validar la variable pedida)
         import pyarrow.parquet as pq
@@ -205,6 +210,13 @@ class MapaEspacial:
     def _con_coords(self, serie):
         return serie.reset_index().merge(self.meta, on='nodo_id', how='inner')
 
+    def _relacion_celda(self):
+        """Relación alto/ancho en pantalla de un mapa (ya corregida por latitud),
+        para dimensionar figuras proporcionales a la forma real de la región."""
+        ancho = self.xlim[1] - self.xlim[0]
+        alto = (self.ylim[1] - self.ylim[0]) * self.aspecto
+        return alto / ancho if ancho > 0 else 1.0
+
     def _dibujar(self, ax, mapa, cmap, vmin, vmax, basemap=True, s=14):
         """Pinta el scatter + mapa base en un eje y devuelve el mappable."""
         sc = ax.scatter(mapa['longitude'], mapa['latitude'], c=mapa['valor'],
@@ -212,14 +224,16 @@ class MapaEspacial:
                         vmin=vmin, vmax=vmax, zorder=2)
         ax.set_xlim(*self.xlim)
         ax.set_ylim(*self.ylim)
+        ax.set_aspect(self.aspecto)
         if basemap:
             try:
                 import contextily as cx
                 cx.add_basemap(ax, crs='EPSG:4326',
-                               source=cx.providers.CartoDB.Positron, alpha=0.85, zorder=1)
-                ax.set_aspect('auto')              # llenar la celda
+                               source=cx.providers.CartoDB.Positron, alpha=0.85,
+                               attribution=False, zorder=1)
                 ax.set_xlim(*self.xlim)
                 ax.set_ylim(*self.ylim)
+                ax.set_aspect(self.aspecto)
             except Exception as e:
                 print(f"(sin mapa base: {e})")
         return sc
@@ -280,7 +294,9 @@ class MapaEspacial:
         print(f"Nodos: {len(mapa)} | valor medio {mapa.valor.mean():.2f} "
               f"| rango [{mapa.valor.min():.2f}, {mapa.valor.max():.2f}] {unidades}")
 
-        _fig, ax = plt.subplots(figsize=(9, 12), dpi=250)
+        rel = self._relacion_celda()
+        ancho_fig = 9.0
+        _fig, ax = plt.subplots(figsize=(ancho_fig, max(ancho_fig * rel, 4.0)), dpi=250)
         sc = self._dibujar(ax, mapa, cmap, mapa.valor.min(), mapa.valor.max())
         etiqueta_cb = f"{titulo_var} {_DESC_AGG[agregacion]}" + (f" ({unidades})" if unidades else "")
         plt.colorbar(sc, ax=ax, label=etiqueta_cb, fraction=0.046, pad=0.04)
@@ -317,16 +333,33 @@ class MapaEspacial:
         vmin, vmax = mensual['valor'].min(), mensual['valor'].max()
         print(f"Escala compartida: [{vmin:.2f}, {vmax:.2f}] {unidades}")
 
-        fig, axes = plt.subplots(4, 3, figsize=(10, 19), dpi=170, layout='constrained')
+        # Alto proporcional a la forma real de cada celda (3 columnas x 4 filas).
+        rel = self._relacion_celda()
+        ancho_fig = 10.0
+        alto_fig = min(max((ancho_fig / 3) * rel * 4, 6.0), 22.0)
+        fig, axes = plt.subplots(4, 3, figsize=(ancho_fig, alto_fig), dpi=170,
+                                 layout='constrained')
         fig.set_constrained_layout_pads(w_pad=0.01, h_pad=0.01, wspace=0.008, hspace=0.015)
         sc = None
         for mes in range(1, 13):
-            ax = axes[(mes - 1) // 3, (mes - 1) % 3]
+            fila, col = (mes - 1) // 3, (mes - 1) % 3
+            ax = axes[fila, col]
             sub = mensual[mensual['month'] == mes]
             sc = self._dibujar(ax, sub, cmap, vmin, vmax, s=6)
             ax.set_title(f"{MESES_ES[mes]} - μ={sub['valor'].mean():.2f}",
                          fontsize=11, fontweight='bold', pad=2)
-            ax.set_xticks([]); ax.set_yticks([])
+            # Ejes solo en el borde: latitud en la 1ª columna, longitud en la
+            # última fila (evita repetir las mismas escalas en las 12 celdas).
+            ax.tick_params(labelsize=8)
+            if col == 0:
+                ax.set_ylabel("Latitud", fontsize=9)
+            else:
+                ax.set_yticklabels([])
+            if fila == 3:
+                ax.set_xlabel("Longitud", fontsize=9)
+                ax.tick_params(axis='x', rotation=45)
+            else:
+                ax.set_xticklabels([])
 
         etiqueta_cb = f"{titulo_var} {_DESC_AGG[agregacion]}" + (f" ({unidades})" if unidades else "")
         fig.suptitle(f"{titulo_var} {_DESC_AGG[agregacion]} por mes - {self.region} ({self.anio})",

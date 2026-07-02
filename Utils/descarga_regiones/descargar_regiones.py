@@ -29,7 +29,7 @@ REGIONES = {
     'tamaulipas': {'metadata': 'Data/Tamaulipas/metadata_nodos_tamaulipas.csv',
                    'raiz': 'Data/Tamaulipas', 'tag': 'tamaulipas'},
     'puerto_rico': {'metadata': 'Data/Puerto_Rico/metadata_nodos_pr.csv',
-                    'raiz': 'Data/Puerto_Rico', 'tag': 'pr'},
+                    'raiz': 'Data/Puerto_Rico', 'tag': 'puerto_rico'},
 }
 
 

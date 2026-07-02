@@ -52,7 +52,32 @@ convención de NSRDB.
 | 12 | Smoke (humo) |
 | −15 | (sin dato / relleno) |
 
-## Diccionario `fill_flag`
+## `fill_flag` — porcentaje de relleno (NO es categórica 0–5)
+
+⚠️ **Corrección (verificada en el código de NSRDB).** En el producto **GOES
+aggregated PSM v4** que usamos, `fill_flag` **no** es la categórica 0–5 (esa
+pertenece al producto NSRDB *no* agregado). Aquí es el **porcentaje entero
+(0–100) de sub-muestras que fueron rellenadas (*gap-filled* por MLClouds)** al
+agregar a la celda-hora:
+
+```
+fill_flag = 100 · (nº sub-muestras rellenadas) / (len(nn) · w)
+```
+
+- **0** = celda-hora con observación satelital limpia; **100** = totalmente rellenada.
+- En nuestros datos toma 29 valores discretos (`round(k/28·100)`, k=0…28) porque
+  el denominador `len(nn)·w = 28`; por eso "avanzan de ~4 en 4".
+- Es una **métrica de calidad del dato**, útil como filtro del target, no como feature.
+
+Fuente: `Aggregation.fill_flag` en
+[`nsrdb/aggregation/aggregation.py`](https://raw.githubusercontent.com/NREL/nsrdb/main/nsrdb/aggregation/aggregation.py)
+(repo [NREL/nsrdb](https://github.com/NREL/nsrdb)). Análisis completo e
+implicaciones en `forecasting/docs/hallazgo_fill_flag.md`.
+
+## Diccionario `cloud_fill_flag` (0–7)
+
+El flag categórico de relleno de nubosidad es `cloud_fill_flag` (∈ [0, 7]), no
+`fill_flag`. Diccionario aproximado (bandera de origen del relleno de nubes):
 
 | Código | Significado |
 |---|---|
@@ -62,9 +87,7 @@ convención de NSRDB.
 | 3 | Exceeds Clearsky |
 | 4 | Missing Cloud Properties |
 | 5 | Rayleigh Violation |
-
-> `cloud_fill_flag` es otra columna del dataset (bandera de relleno de nubosidad);
-> la cabecera no incluye su diccionario.
+| 6–7 | (otros modos de relleno; ver pipeline `nsrdb/gap_fill/`) |
 
 ---
 
