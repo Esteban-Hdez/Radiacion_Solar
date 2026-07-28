@@ -28,3 +28,17 @@ Data/**/*.log
 # Históricos (no interesan en el repo)
 Data/Tamaulipas/historico_4501_con_mar/
 Data/Puerto_Rico/historico_2480_0.02/
+
+# ===== Resultados de forecast (Results/) =====
+# Se versiona el rastro reproducible del experimento (config, métricas, summary,
+# feature importance, modelo entrenado) pero NO los binarios que se regeneran.
+
+# Caché de datasets de features: cientos de MB por combinación de bloques,
+# se reconstruye con features/builder.py a partir de Data/.
+Results/**/experiments/datasets/
+
+# Predicciones sobre test: se regeneran cargando model.json + el dataset.
+Results/**/predictions_test.parquet
+
+# ===== macOS =====
+.DS_Store

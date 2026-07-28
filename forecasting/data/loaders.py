@@ -11,10 +11,80 @@ Carga de datos para el pronóstico. Dos rutas:
 Todo respeta lo definido en `forecasting.config`.
 """
 from __future__ import annotations
+import os
+import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 
 from forecasting import config as C
+
+
+def cargar_serie_nodo(nodo_id: int = 1736, ruta: str | None = None) -> pd.DataFrame:
+    """Serie horaria contigua de un nodo desde el parquet YA generado y committeado.
+
+    A diferencia de `cargar_nodo` (que lee los grandes `Data/*.parquet`, no presentes
+    en la laptop), esto lee `Results/<REGION>/forecast/nodo_<id>_serie.parquet`, con
+    índice `datetime` y malla horaria completa (huecos expuestos como NaN). Es la
+    entrada de la Fase 2 en adelante para el trabajo single-node.
+    """
+    ruta = ruta or os.path.join(C.DIR_RESULTADOS, f"nodo_{nodo_id}_serie.parquet")
+    df = pd.read_parquet(ruta)
+    df["datetime"] = pd.to_datetime(df["datetime"])
+    df = df.drop_duplicates("datetime").sort_values("datetime").set_index("datetime")
+
+    # Índice horario contiguo: expone timestamps faltantes como NaN (no los oculta).
+    idx = pd.date_range(df.index.min(), df.index.max(), freq="h")
+    df = df.reindex(idx)
+    df.index.name = "datetime"
+    df["nodo_id"] = nodo_id
+    return df
+
+
+def cargar_bloque(nodos: list[int], anios: list[int] | None = None) -> pd.DataFrame:
+    """Carga un BLOQUE de nodos (multi-nodo) desde los grandes `Data/*.parquet`.
+
+    Lee cada año una sola vez con filtro `nodo_id in nodos` (empuje a nivel de
+    row-group, eficiente). Devuelve un DataFrame largo con columna `datetime` y
+    `nodo_id`; las estáticas (lat/lon/msnm) se aseguran desde la metadata. NO
+    reindexa aquí: la malla horaria contigua por nodo se arma al construir features.
+    """
+    anios = anios or C.ANIOS_TODOS
+    partes = []
+    for anio in anios:
+        df = pd.read_parquet(C.ruta_parquet(anio),
+                             filters=[("nodo_id", "in", list(nodos))])
+        partes.append(df)
+    df = pd.concat(partes, ignore_index=True)
+    df["datetime"] = pd.to_datetime(df["datetime"])
+    df = df.drop_duplicates(["nodo_id", "datetime"])
+
+    faltan = [c for c in C.ESTATICAS if c not in df.columns]
+    if faltan:
+        meta = cargar_metadata(list(nodos))[["nodo_id", *C.ESTATICAS]]
+        df = df.merge(meta, on="nodo_id", how="left")
+    return df
+
+
+def serie_contigua_nodo(df_nodo: pd.DataFrame) -> pd.DataFrame:
+    """Reindexa las filas de UN nodo a una malla horaria contigua (índice datetime),
+    exponiendo huecos como NaN. Usado por el ensamblado multi-nodo de features."""
+    d = df_nodo.drop_duplicates("datetime").sort_values("datetime").set_index("datetime")
+    idx = pd.date_range(d.index.min(), d.index.max(), freq="h")
+    d = d.reindex(idx)
+    d.index.name = "datetime"
+    d["nodo_id"] = df_nodo["nodo_id"].iloc[0]
+    return d
+
+
+def nodos_cercanos(pivote: int, n: int) -> tuple[int, ...]:
+    """Los `n` nodos más cercanos al `pivote` (distancia euclídea en lat/lon), como
+    tupla ordenada de ids. Determinista dada la metadata; define bloques compactos
+    (p.ej. n=144 ≈ malla 12×12 alrededor del nodo pivote)."""
+    meta = cargar_metadata()
+    c = meta.loc[meta["nodo_id"] == pivote].iloc[0]
+    d = np.hypot(meta["latitude"] - c["latitude"], meta["longitude"] - c["longitude"])
+    ids = meta.loc[d.nsmallest(n).index, "nodo_id"].astype(int)
+    return tuple(sorted(ids))
 
 
 def cargar_metadata(nodos: list[int] | None = None) -> pd.DataFrame:

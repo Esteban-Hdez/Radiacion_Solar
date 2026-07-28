@@ -25,15 +25,54 @@ UV → hay que rezagarlas). Ver `config.py`.
 ```
 forecasting/
 ├── config.py                 # rutas, años, horas operativas, grupos anti-leakage
+├── target.py                 # kt, máscara operativa, reconstruir GHI, split temporal
+├── features/                 # feature-sets COMPONIBLES por bloques
+│   ├── base.py               # META + bloque_base (35 features = Fase 3)
+│   ├── volatilidad.py        # lags largos, rampas (Δkt), std/rango de kt
+│   ├── nocturno.py           # agregados/tendencias de meteo 12 h (cubre la noche)
+│   ├── viento.py             # viento en componentes u/v + sin/cos de la dirección
+│   ├── cielo.py              # fracción difusa kd=dhi/ghi + depresión punto de rocío
+│   ├── nubes.py              # cloud_type: opacity/target encoding (train) + fracción nublada
+│   ├── adveccion.py          # ESPACIAL: vecinos/gradientes/advección + upwind semi-Lagrangiano (r2, nube espacial)
+│   └── builder.py            # construir(df, bloques) single + construir_bloque multi-nodo
 ├── data/
-│   ├── loaders.py            # cargar nodo multi-año (índice horario contiguo) + calidad
+│   ├── loaders.py            # cargar_serie_nodo (single) + cargar_bloque (multi-nodo, Data/) + calidad
 │   └── qc.py                 # selección de nodo + reporte QC + tabla fill_flag
+├── multihorizonte.py         # t+1..t+24 horas operativas (directo, horizonte como feature)
+├── models/
+│   ├── xgb.py                # XGBoost kt(t+1) parametrizable, device autodetectado (cuda/cpu)
+│   └── xgb_cuantilico.py     # XGBoost cuantílico P10/P50/P90 (base_score=0.5)
+├── eval/
+│   ├── metrics.py            # rmse, mae, mbe, r2, skill, evaluar (global + segmentada)
+│   ├── persistence.py        # smart persistence kt(t+1)=kt(t), variantes A/B
+│   ├── reporte.py            # tabla baseline split×variante×segmento + RMSE_ref
+│   ├── comparar.py           # skill/R² modelo vs persistence sobre las mismas horas
+│   ├── regimen.py            # métricas por régimen de nubosidad y de rampa
+│   ├── cuantil.py            # pinball, cobertura, anchura (intervalo) global + régimen
+│   └── desglose.py           # desglose rico multi-horizonte (horizonte/hora/mes/nodo/…)
+├── experiments/             # framework de experimentos VERSIONADOS
+│   ├── base.py               # ExperimentoConfig + Experimento (runner, puntual/cuantílico)
+│   ├── registro.py           # catálogo (exp_id, version) -> config
+│   ├── run.py                # CLI: python -m forecasting.experiments.run <id> [--version]
+│   ├── reporte.py            # ReporteExperimento: carga artefactos para los notebooks
+│   └── expNN_*.py            # exp02 base, exp03 volatilidad/nocturno, exp04 cuantílico
+├── viz.py                    # VisualizadorForecast (series, dispersión, días difíciles, intervalos)
+├── tests/                   # pytest: anti-leakage, target, features, métricas, régimen, cuantil
 └── docs/
-    ├── fase1_qc.md           # bitácora y hallazgos de la Fase 1
-    └── hallazgo_fill_flag.md # qué es fill_flag (% de relleno), fuentes e implicaciones
+    ├── fase1_qc.md … fase5_cuantilico.md   # bitácoras por fase
+    ├── roadmap_episodios.md  # estrategia: foco en episodios difíciles
+    └── hallazgo_fill_flag.md # qué es fill_flag (% de relleno)
 notebooks/
-└── 01_exploracion_qc.ipynb   # notebook de la fase de exploración/QC
+├── 01_exploracion_qc.ipynb · 02_baseline_persistence.ipynb · 03_xgboost_t1.ipynb
+└── experiments/             # un notebook por experimento (finos, vía ReporteExperimento)
+    ├── exp02_xgb_base · exp03_xgb_volatilidad · exp04_xgb_cuantilico
+    └── exp05_multinodo_victoria · exp06_viento_cielo · exp07_adveccion
 ```
+
+### Portabilidad Ubuntu (GPU) / Mac (CPU)
+
+El device de XGBoost se **autodetecta** (`nvidia-smi` → `cuda`, si no `cpu`).
+Forzar con `RS_DEVICE=cpu|cuda`. Single-node corre en la Mac; multi-nodo en Ubuntu.
 
 ## Cómo ejecutar
 
@@ -54,4 +93,43 @@ conda run -n rs jupyter nbconvert --execute --to notebook --inplace notebooks/01
 ## Estado
 
 - **Fase 1 (QC/exploración)** — hecha. Ver `docs/fase1_qc.md`.
-- Fase 2 (baseline persistence), Fase 3 (features + XGBoost), … — pendientes.
+- **Fase 2 (baseline persistence)** — hecha. Ver `docs/fase2_baseline.md`.
+  `RMSE_ref` (variante A, GHI): train 83.05 / val 84.63 / **test 84.87 W/m²**.
+- **Fase 3 (primer XGBoost t+1)** — hecha. Ver `docs/fase3_xgboost.md`.
+  Supera a persistence: **skill test 0.060** (RMSE 84.87 → 79.82 W/m²), skill>0 en
+  todos los segmentos.
+- **Fase 4 (framework de experimentos + experimento 1)** — hecha. Ver
+  `docs/fase4_experimentos.md`. Experimentos versionados; evaluación por régimen.
+  Experimento 1: `volatilidad` sobreajusta, `nocturno` marginal (exp03 v2, skill 0.061).
+- **Fase 5 (notebooks por experimento + exp04 cuantílico)** — hecha. Ver
+  `docs/fase5_cuantilico.md`. Un notebook por experimento; exp04 P10/P50/P90 (P50 skill
+  0.054; banda se ensancha en nublado pero infracubierta → falta conformal).
+- **Fase 6 (multi-nodo pooled)** — hecha. Ver `docs/fase6_multinodo.md`. exp05 v1:
+  bloque 5×5 (25 nodos); skill 0.070 (+16 % vs single).
+- **Fase 7 (viento/cielo + escalado 144 nodos)** — hecha. Ver
+  `docs/fase7_viento_cielo_escalado.md`. exp05 v2 (144 nodos): **skill 0.085** (+21 %);
+  exp06 (+viento+cielo): 0.086.
+- **Fase 8 (advección espacial)** — hecha. Ver `docs/fase8_adveccion.md`. exp07 v1
+  (+features espaciales): **skill 0.111** (+29 %), RMSE 84.9→76.8; mejora todos los
+  regímenes. `kt_vecinos_mean` 3ª feature.
+- **Fase 9 (codificación de cloud_type)** — hecha. Ver `docs/fase9_nubes_encoding.md`.
+  exp07 v2 + bloque `nubes`: skill 0.112 (fix metodológico).
+- **Fase 10 (advección refinada)** — hecha. Ver `docs/fase10_adveccion_refinada.md`.
+  exp07 v3 + `adveccion_upwind` (upwind semi-Lagrangiano, vecindario r2, nube espacial):
+  **skill 0.121**. exp07 **v4** + vecindario radio 3: **skill 0.127** (rendimientos
+  decrecientes; r2 sigue dominando, rampa fuerte igual). RMSE 84.9→75.4.
+- **Fase 11 (multi-horizonte t+1..t+24)** — hecha. Ver `docs/fase11_multihorizonte.md`.
+  `multihorizonte.py` (directo, horizonte como feature) + `eval/desglose.py` (por
+  horizonte/hora/mes/nodo/régimen/fill_flag/rangos). exp08 (25 nodos, 12.3 M filas):
+  **skill global 0.244**; crece con el horizonte (h=24 ~0.28), h=1 pierde (no se
+  especializa). ~35 s / 6.9 GB en la Mac.
+- **Catálogo de features** por tipo: `docs/catalogo_features.md`.
+- Siguiente: arreglar h=1 (modelos por horizonte), NWP para día-adelante, exp04 v2 (conformal).
+
+### Correr experimentos y tests
+
+```bash
+python -m forecasting.experiments.run --listar
+python -m forecasting.experiments.run exp04_xgb_cuantilico
+python -m pytest forecasting/tests/ -q
+```

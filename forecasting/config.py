@@ -32,6 +32,16 @@ def ruta_parquet(anio: int) -> str:
 
 META_NODOS = os.path.join(RAIZ, "Data", REGION, "metadata_nodos_tamaulipas.csv")
 DIR_RESULTADOS = os.path.join(RAIZ, "Results", REGION, "forecast")
+DIR_MODELOS = os.path.join(DIR_RESULTADOS, "modelos")
+
+# Experimentos versionados: cada experimento/versión y cada dataset de features
+# viven en su propia carpeta para no mezclarse y poder reproducirse. Ver
+# `forecasting/experiments/`.
+DIR_EXPERIMENTS = os.path.join(DIR_RESULTADOS, "experiments")
+DIR_DATASETS = os.path.join(DIR_EXPERIMENTS, "datasets")
+
+# Horizonte de pronóstico (t+1 en el arranque; luego t+24).
+HORIZONTE = 1
 
 # Partición temporal decidida para el arranque single-node.
 ANIOS_TRAIN = [2020, 2021, 2022]
@@ -96,3 +106,6 @@ RANGOS_FISICOS = {
 }
 
 os.makedirs(DIR_RESULTADOS, exist_ok=True)
+os.makedirs(DIR_MODELOS, exist_ok=True)
+os.makedirs(DIR_EXPERIMENTS, exist_ok=True)
+os.makedirs(DIR_DATASETS, exist_ok=True)

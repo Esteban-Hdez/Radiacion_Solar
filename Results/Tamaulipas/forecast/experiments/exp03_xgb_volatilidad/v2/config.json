@@ -1,0 +1,16 @@
+{
+  "exp_id": "exp03_xgb_volatilidad",
+  "version": "v2",
+  "descripcion": "base + nocturno (config retenida: volatilidad sobreajustaba; nocturno aporta skill marginal y mejora rampas fuertes).",
+  "nodo_id": 1736,
+  "bloques": [
+    "base",
+    "nocturno"
+  ],
+  "modelo": "xgboost",
+  "params": {},
+  "ponderar_ghi": false,
+  "feature_set_id": "base-nocturno",
+  "n_features": 45,
+  "best_iteration": 232
+}

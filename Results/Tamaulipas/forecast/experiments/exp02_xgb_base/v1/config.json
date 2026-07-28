@@ -1,0 +1,15 @@
+{
+  "exp_id": "exp02_xgb_base",
+  "version": "v1",
+  "descripcion": "XGBoost t+1 con feature-set base (lags kt 1/2/3/24 + kt_last_op + deterministas known-future + estáticas + observadas lag1). Reproduce la Fase 3; referencia para el resto de experimentos.",
+  "nodo_id": 1736,
+  "bloques": [
+    "base"
+  ],
+  "modelo": "xgboost",
+  "params": {},
+  "ponderar_ghi": false,
+  "feature_set_id": "base",
+  "n_features": 35,
+  "best_iteration": 189
+}
