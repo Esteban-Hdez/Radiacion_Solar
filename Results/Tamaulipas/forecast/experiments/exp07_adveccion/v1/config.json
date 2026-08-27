@@ -164,6 +164,6 @@
   "feature_set_id": "base-nocturno-viento-cielo-adveccion",
   "id_dataset": "victoria12x12",
   "n_nodos": 144,
-  "n_features": 58,
-  "best_iteration": 353
+  "n_features": 57,
+  "best_iteration": 426
 }

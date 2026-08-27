@@ -16,10 +16,11 @@ from forecasting.experiments.exp04_xgb_cuantilico import CONFIGS as C04
 from forecasting.experiments.exp05_multinodo_victoria import CONFIGS as C05
 from forecasting.experiments.exp06_viento_cielo import CONFIGS as C06
 from forecasting.experiments.exp07_adveccion import CONFIGS as C07
+from forecasting.experiments.exp09_regiones import CONFIGS as C09
 
 # (exp_id, version) -> config
 REGISTRO: dict[tuple[str, str], ExperimentoConfig] = {
-    (c.exp_id, c.version): c for c in [*C02, *C03, *C04, *C05, *C06, *C07]
+    (c.exp_id, c.version): c for c in [*C02, *C03, *C04, *C05, *C06, *C07, *C09]
 }
 
 

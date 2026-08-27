@@ -1,8 +1,10 @@
 {
   "exp_id": "exp03_xgb_volatilidad",
   "version": "v1",
-  "descripcion": "XGBoost t+1 = base + volatilidad (lags largos, rampas, std/rango de kt) + nocturno (agregados y tendencias de meteo 12 h). Objetivo: mejorar los episodios nublados/variables.",
+  "descripcion": "base + volatilidad + nocturno (intento completo del experimento 1).",
   "nodo_id": 1736,
+  "nodos": [],
+  "bloque_id": "",
   "bloques": [
     "base",
     "volatilidad",
@@ -11,7 +13,10 @@
   "modelo": "xgboost",
   "params": {},
   "ponderar_ghi": false,
+  "cuantiles": [],
   "feature_set_id": "base-volatilidad-nocturno",
-  "n_features": 58,
-  "best_iteration": 342
+  "id_dataset": "nodo1736",
+  "n_nodos": 1,
+  "n_features": 57,
+  "best_iteration": 283
 }

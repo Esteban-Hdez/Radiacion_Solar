@@ -42,6 +42,6 @@
   "feature_set_id": "base-nocturno",
   "id_dataset": "victoria5x5",
   "n_nodos": 25,
-  "n_features": 45,
-  "best_iteration": 293
+  "n_features": 44,
+  "best_iteration": 242
 }

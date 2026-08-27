@@ -11,7 +11,7 @@ from __future__ import annotations
 import pandas as pd
 
 from forecasting.features.builder import (construir, construir_bloque,
-                                          columnas_features, BLOQUES)
+                                          columnas_features, a_float32, BLOQUES)
 from forecasting.features.base import META_COLS
 
 # Alias interno usado por código previo (fase 3).
@@ -23,5 +23,5 @@ def construir_features(df: pd.DataFrame) -> pd.DataFrame:
     return construir(df, bloques=("base",))
 
 
-__all__ = ["construir", "construir_bloque", "columnas_features",
+__all__ = ["construir", "construir_bloque", "columnas_features", "a_float32",
            "construir_features", "BLOQUES", "META_COLS"]

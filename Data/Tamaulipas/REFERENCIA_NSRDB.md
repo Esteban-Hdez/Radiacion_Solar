@@ -67,6 +67,11 @@ fill_flag = 100 · (nº sub-muestras rellenadas) / (len(nn) · w)
 - **0** = celda-hora con observación satelital limpia; **100** = totalmente rellenada.
 - En nuestros datos toma 29 valores discretos (`round(k/28·100)`, k=0…28) porque
   el denominador `len(nn)·w = 28`; por eso "avanzan de ~4 en 4".
+- **De dónde sale el 28**: `nn` = **4 vecinos espaciales** (2 km → 4 km, o sea
+  `ceil(16/4)`; la celda de 4 km agrega las 2×2 celdas de 2 km) y `w` = **7 pasos
+  temporales** (5 min → 30 min). **4 × 7 = 28 sub-muestras** por celda-hora.
+- Como la agregación binariza el flag de origen, `fill_flag` es literalmente el
+  **% de las 28 sub-muestras cuyo `cloud_fill_flag` era distinto de 0**.
 - Es una **métrica de calidad del dato**, útil como filtro del target, no como feature.
 
 Fuente: `Aggregation.fill_flag` en
@@ -77,17 +82,24 @@ implicaciones en `forecasting/docs/hallazgo_fill_flag.md`.
 ## Diccionario `cloud_fill_flag` (0–7)
 
 El flag categórico de relleno de nubosidad es `cloud_fill_flag` (∈ [0, 7]), no
-`fill_flag`. Diccionario aproximado (bandera de origen del relleno de nubes):
+`fill_flag`.
 
-| Código | Significado |
-|---|---|
-| 0 | (sin relleno) |
-| 1 | Missing Image |
-| 2 | Low Irradiance |
-| 3 | Exceeds Clearsky |
-| 4 | Missing Cloud Properties |
-| 5 | Rayleigh Violation |
-| 6–7 | (otros modos de relleno; ver pipeline `nsrdb/gap_fill/`) |
+⚠️ **Corrección.** La tabla que había aquí antes (*Missing Image, Low Irradiance,
+Exceeds Clearsky, Rayleigh Violation*…) era la lista heredada de **PSM v3** y **no
+corresponde** a los códigos que escribe el pipeline v4. Los de abajo están
+**verificados leyendo el código fuente**; no existe una enumeración única porque los
+asignan **tres módulos distintos** sobre el mismo array:
+
+| Código | Significado | Módulo que lo asigna | % en 2024 |
+|---|---|---|---|
+| 0 | sin relleno — recuperación satelital limpia | — | 94.36 % |
+| 1 | falta `cloud_type` en ese paso temporal | `gap_fill/cloud_fill.py` | 1.29 % |
+| 2 | falta `cloud_type` en toda la serie → se asume despejado | `gap_fill/cloud_fill.py` | 1.10 % |
+| 3 | falta una propiedad de nube en hora diurna nublada | `gap_fill/cloud_fill.py` | 0.64 % |
+| 4 | faltan propiedades de nube en toda la serie | `gap_fill/cloud_fill.py` | 0.69 % |
+| 5 | se forzó el límite de cielo despejado (`enforce_clearsky`) | `gap_fill/irradiance_fill.py` | 0.64 % |
+| 6 | irradiancia NaN o negativa | `gap_fill/irradiance_fill.py` | 0.75 % |
+| 7 | **relleno por MLClouds** (red neuronal) | `gap_fill/mlclouds_fill.py` | 0.52 % |
 
 ---
 

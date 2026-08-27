@@ -3,13 +3,18 @@
   "version": "v1",
   "descripcion": "XGBoost t+1 con feature-set base (lags kt 1/2/3/24 + kt_last_op + deterministas known-future + estáticas + observadas lag1). Reproduce la Fase 3; referencia para el resto de experimentos.",
   "nodo_id": 1736,
+  "nodos": [],
+  "bloque_id": "",
   "bloques": [
     "base"
   ],
   "modelo": "xgboost",
   "params": {},
   "ponderar_ghi": false,
+  "cuantiles": [],
   "feature_set_id": "base",
+  "id_dataset": "nodo1736",
+  "n_nodos": 1,
   "n_features": 35,
-  "best_iteration": 189
+  "best_iteration": 226
 }

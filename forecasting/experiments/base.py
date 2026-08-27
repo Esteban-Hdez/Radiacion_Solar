@@ -37,12 +37,14 @@ class ExperimentoConfig:
     descripcion: str
     nodo_id: int = 1736                          # single-node por defecto
     nodos: tuple[int, ...] = ()                  # si no vacío -> MULTI-NODO (pooled)
+    nodos_eval: tuple[int, ...] = ()             # si no vacío -> métricas SOLO sobre estos
     bloque_id: str = ""                          # nombre del bloque (dataset multi-nodo)
     bloques: tuple[str, ...] = ("base",)         # feature-sets a componer
     modelo: str = "xgboost"
     params: dict = field(default_factory=dict)   # overrides de hiperparámetros
     ponderar_ghi: bool = False
     cuantiles: tuple[float, ...] = ()            # si no vacío -> modelo CUANTÍLICO
+    float32: bool = False                        # features a float32 (mitad de RAM)
 
     @property
     def lista_nodos(self) -> tuple[int, ...]:
@@ -51,6 +53,17 @@ class ExperimentoConfig:
     @property
     def multinodo(self) -> bool:
         return len(self.lista_nodos) > 1
+
+    @property
+    def lista_eval(self) -> tuple[int, ...]:
+        """Nodos sobre los que se REPORTAN métricas. Por defecto, todos los de
+        entrenamiento; en los experimentos por región es solo la región (los nodos
+        de halo entrenan pero no se evalúan)."""
+        return tuple(self.nodos_eval) if self.nodos_eval else self.lista_nodos
+
+    @property
+    def con_halo(self) -> bool:
+        return bool(self.nodos_eval) and len(self.nodos_eval) < len(self.lista_nodos)
 
     @property
     def feature_set_id(self) -> str:
@@ -91,10 +104,14 @@ class Experimento:
             return pd.read_parquet(ruta)
         if self.cfg.multinodo:
             bloque = cargar_bloque(list(self.cfg.lista_nodos))
-            feat = F.construir_bloque(bloque, bloques=self.cfg.bloques)
+            feat = F.construir_bloque(bloque, bloques=self.cfg.bloques,
+                                      float32=self.cfg.float32)
+            del bloque                     # liberar cuanto antes: pesa como el dataset
         else:
             df = cargar_serie_nodo(self.cfg.nodo_id)
             feat = F.construir(df, bloques=self.cfg.bloques)
+            if self.cfg.float32:
+                feat = F.a_float32(feat)
         os.makedirs(os.path.dirname(ruta), exist_ok=True)
         feat.to_parquet(ruta)
         # El encoding de nubes (ajustado en train) se guarda aparte: parquet no
@@ -139,9 +156,15 @@ class Experimento:
                 return per.loc[per.index.year.isin(anios[nombre]), "ghi_pred_A"]
 
         # --- Métricas puntuales globales (val + test) y por régimen (test) ---
+        # Con halo, el modelo se ENTRENA con los nodos extra pero se EVALÚA solo
+        # sobre `lista_eval`: así la población de métricas es exactamente la región.
+        eval_ids = set(cfg.lista_eval) if cfg.con_halo else None
+
         globales, pred_test = [], None
         for nombre in ["val", "test"]:
             pred = predecir(splits[nombre])
+            if eval_ids is not None:
+                pred = pred[pred["nodo_id"].isin(eval_ids)]
             ref = ref_split(nombre)
             globales.append(CMP.comparar(pred, ref, nombre="modelo").assign(split=nombre))
             if nombre == "test":
@@ -195,6 +218,7 @@ class Experimento:
             json.dump({**asdict(self.cfg),
                        "feature_set_id": self.cfg.feature_set_id,
                        "id_dataset": self.cfg.id_dataset, "n_nodos": len(self.cfg.lista_nodos),
+                       "n_nodos_eval": len(self.cfg.lista_eval),
                        "n_features": n_features, "best_iteration": best_iter}, f,
                       indent=2, ensure_ascii=False)
         model.save_model(os.path.join(d, "model.json"))
@@ -225,6 +249,10 @@ class Experimento:
         g = tab_global[(tab_global.split == "test") & (tab_global.segmento == "global")].iloc[0]
         alcance = (f"{len(cfg.lista_nodos)} nodos (bloque `{cfg.id_dataset}`)"
                    if cfg.multinodo else f"nodo {cfg.nodo_id}")
+        if cfg.con_halo:
+            alcance = (f"{len(cfg.lista_eval)} nodos evaluados + "
+                       f"{len(cfg.lista_nodos) - len(cfg.lista_eval)} de halo "
+                       f"(entrenan, no puntúan) — bloque `{cfg.id_dataset}`")
         lineas = [
             f"# {cfg.exp_id} — {cfg.version}", "",
             cfg.descripcion, "",

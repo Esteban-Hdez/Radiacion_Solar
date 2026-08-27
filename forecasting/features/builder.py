@@ -69,11 +69,16 @@ def construir(df: pd.DataFrame, bloques: tuple[str, ...] = ("base",),
 
 
 def construir_bloque(df_bloque: pd.DataFrame,
-                     bloques: tuple[str, ...] = ("base",)) -> pd.DataFrame:
+                     bloques: tuple[str, ...] = ("base",),
+                     float32: bool = False) -> pd.DataFrame:
     """Features MULTI-NODO: construye por nodo (para que los lags no crucen nodos) y
     concatena. `df_bloque`: salida de `loaders.cargar_bloque` (columnas datetime +
     nodo_id + variables). El resultado lleva `nodo_id` como columna META y conserva el
     índice datetime (con duplicados entre nodos: cada nodo aporta su misma hora).
+
+    `float32`: baja las features a float32 **por nodo, antes de concatenar**. Tiene
+    que ser aquí y no al final: el pico de memoria está en la concatenación y en los
+    bloques espaciales, así que downcastear el resultado ya no ahorraría nada.
     """
     por_nodo = tuple(b for b in bloques if b not in BLOQUES_ESPACIALES)
     espaciales = tuple(b for b in bloques if b in BLOQUES_ESPACIALES)
@@ -87,12 +92,14 @@ def construir_bloque(df_bloque: pd.DataFrame,
         d = serie_contigua_nodo(g)
         feat = construir(d, por_nodo, opacidad_nubes=opac)
         feat["nodo_id"] = nodo
-        partes.append(feat)
+        partes.append(a_float32(feat) if float32 else feat)
     feat = pd.concat(partes)
 
     # Bloques espaciales (advección): sobre la matriz multi-nodo ya concatenada.
     for nombre in espaciales:
         feat = BLOQUES_ESPACIALES[nombre](feat)
+    if float32:
+        feat = a_float32(feat)         # las features espaciales nacen en float64
     if opac is not None:
         feat.attrs["opacidad_cloud"] = opac
     return feat
@@ -101,3 +108,20 @@ def construir_bloque(df_bloque: pd.DataFrame,
 def columnas_features(feat: pd.DataFrame) -> list[str]:
     """Columnas que SÍ entran al modelo (excluye las META)."""
     return [c for c in feat.columns if c not in META_COLS]
+
+
+def a_float32(feat: pd.DataFrame) -> pd.DataFrame:
+    """Baja las FEATURES float64 a float32 (in-place sobre las columnas no-META).
+
+    Es lossless de cara al modelo: XGBoost convierte internamente a float32 de todos
+    modos, así que el float64 solo estaba costando memoria. Las columnas META se
+    dejan intactas (`kt`, `clearsky_ghi_target`, `ghi_true`… se usan para reconstruir
+    el GHI y calcular métricas, donde sí queremos la precisión doble).
+
+    Ahorra ~39 % del dataset (458 -> 278 bytes/fila en el feature-set de exp07 v4),
+    que es lo que hace viable la región Centro con halo. Ver `docs/fase12_regiones.md`.
+    """
+    cols = [c for c in columnas_features(feat) if feat[c].dtype == "float64"]
+    for c in cols:
+        feat[c] = feat[c].astype("float32")
+    return feat

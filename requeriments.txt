@@ -20,6 +20,21 @@ shapely==2.1.2
 contextily==1.7.0
 folium==0.20.0
 
+# --- Forecast (modelado) ---
+xgboost==3.2.0
+scikit-learn==1.9.0
+pvlib==0.15.2
+shap==0.51.0
+joblib==1.5.3
+tqdm==4.68.3
+tabulate==0.10.0
+
 # --- Visualización / notebooks ---
 matplotlib==3.11.0
 ipympl==0.10.0
+jupyter==1.1.1
+nbconvert==7.17.1
+ipykernel==7.2.0
+
+# --- Tests ---
+pytest==9.1.1

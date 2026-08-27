@@ -163,6 +163,6 @@
   "feature_set_id": "base-nocturno-viento-cielo",
   "id_dataset": "victoria12x12",
   "n_nodos": 144,
-  "n_features": 53,
-  "best_iteration": 325
+  "n_features": 52,
+  "best_iteration": 360
 }

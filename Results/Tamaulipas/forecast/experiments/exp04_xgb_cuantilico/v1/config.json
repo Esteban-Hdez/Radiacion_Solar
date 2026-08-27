@@ -3,6 +3,8 @@
   "version": "v1",
   "descripcion": "XGBoost cuantílico P10/P50/P90 sobre kt, feature-set base+nocturno. P50 puntual + banda de incertidumbre; métricas de intervalo.",
   "nodo_id": 1736,
+  "nodos": [],
+  "bloque_id": "",
   "bloques": [
     "base",
     "nocturno"
@@ -16,6 +18,8 @@
     0.9
   ],
   "feature_set_id": "base-nocturno",
-  "n_features": 45,
-  "best_iteration": 286
+  "id_dataset": "nodo1736",
+  "n_nodos": 1,
+  "n_features": 44,
+  "best_iteration": 306
 }
