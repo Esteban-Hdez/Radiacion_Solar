@@ -1,0 +1,13 @@
+cve_mun,municipio,cvegeo,ciudad,nodo_id,latitude,longitude,msnm,metodo,peso,es_nodo_dominante
+003,Altamira,280030001,Altamira,25,22.41,-97.94,6.0,dentro,0.573937,True
+003,Altamira,280030122,Miramar,13,22.37,-97.9,13.0,dentro,0.446006,True
+009,Ciudad Madero,280090001,Ciudad Madero,5,22.29,-97.82,6.0,dentro,0.477606,True
+021,El Mante,280210001,Ciudad Mante,331,22.73,-98.98,84.0,dentro,0.484289,True
+022,Matamoros,280220001,Heroica Matamoros,3841,25.85,-97.5,13.0,dentro,0.15747,True
+027,Nuevo Laredo,280270001,Nuevo Laredo,4342,27.45,-99.54,137.0,dentro,0.137521,True
+032,Reynosa,280320001,Reynosa,3978,26.05,-98.3,51.0,dentro,0.102921,True
+033,Río Bravo,280330001,Ciudad Río Bravo,3925,25.97,-98.06,32.0,celda,0.212703,False
+035,San Fernando,280350001,San Fernando,3037,24.85,-98.14,63.0,dentro,0.642216,True
+038,Tampico,280380001,Tampico,1,22.25,-97.86,21.0,dentro,0.277424,False
+040,Valle Hermoso,280400001,Valle Hermoso,3659,25.65,-97.82,15.0,dentro,0.321324,False
+041,Victoria,280410001,Ciudad Victoria,1737,23.73,-99.14,331.0,dentro,0.244836,True

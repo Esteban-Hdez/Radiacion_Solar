@@ -40,5 +40,32 @@ Results/**/experiments/datasets/
 # Predicciones sobre test: se regeneran cargando model.json + el dataset.
 Results/**/predictions_test.parquet
 
+# ===== Reanálisis Copernicus (copernicus/) =====
+# NetCDF crudos y series extraídas: gigabytes, y se rebajan del CDS con
+# `python -m copernicus.descarga`. Se versiona el código, no los datos.
+Data/**/era5/
+
+# Salidas del notebook de referencia de ERA5 (otro proyecto, Monterrey).
+ERA5/ERA5_Data*/
+ERA5/*.nc
+
 # ===== macOS =====
 .DS_Store
+
+# ===== Análisis urbano (urbano/) =====
+# El HTML interactivo pesa 4 MB (lleva los 4384 nodos embebidos) y se regenera
+# con `python -m urbano.construir`. Los PNG sí se versionan: son el entregable
+# que se cita en el informe.
+Results/**/urbano/*.html
+
+# Series climáticas por ciudad: un juego completo de ámbitos son ~395 MB
+# (86 MB solo en CSV), todos reproducibles con
+# `python -m urbano.clima.construir_clima --todos-los-ambitos`.
+# Se ignora la carpeta entera y se rescatan los dos resúmenes de referencia:
+# el de las 12 ciudades mayores y el agregado estatal.
+Data/**/urbano/clima/*
+!Data/**/urbano/clima/diario_ciudades.csv
+!Data/**/urbano/clima/diario_global.csv
+# Los resúmenes de nodos señalados son 12 y 43 filas: se versionan.
+!Data/**/urbano/clima/resumen_nodos_interes.csv
+!Data/**/urbano/clima/resumen_nodos_municipios.csv

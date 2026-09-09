@@ -1,0 +1,44 @@
+cve_mun,municipio,cabecera,nodo_id,temperature_media,temperature_min,temperature_max,relative_humidity_media,relative_humidity_min,relative_humidity_max
+001,Abasolo,Abasolo,2120,25.2,-1.7,47.3,70.07,6.08,100.0
+002,Aldama,Aldama,637,24.94,-0.5,45.6,75.63,5.99,100.0
+003,Altamira,Altamira,25,25.35,3.8,41.7,78.47,12.67,100.0
+004,Antiguo Morelos,Antiguo Morelos,154,26.16,4.6,49.5,62.64,2.25,100.0
+005,Burgos,Burgos,3094,24.79,-4.5,46.3,65.94,4.91,100.0
+006,Bustamante,Bustamante,1343,17.45,-1.9,39.1,68.31,2.44,100.0
+007,Camargo,Ciudad Camargo,4118,24.99,-5.3,46.8,65.62,5.33,100.0
+008,Casas,Casas,1747,25.08,-1.3,48.0,65.97,5.16,100.0
+009,Ciudad Madero,Ciudad Madero,5,25.55,6.5,38.2,80.12,19.49,100.0
+010,Cruillas,Cruillas,2953,24.33,-4.0,45.5,69.46,5.41,100.0
+011,Gómez Farías,Gómez Farías,784,26.01,4.0,49.6,59.31,2.41,97.66
+012,González,González,457,25.35,1.3,46.6,72.03,4.24,100.0
+013,Güémez,Güémez,1969,25.93,0.2,48.3,58.64,4.53,100.0
+014,Guerrero,Nueva Ciudad Guerrero,4167,24.98,-5.1,47.0,62.7,5.31,100.0
+015,Gustavo Díaz Ordaz,Ciudad Gustavo Díaz Ordaz,4069,24.93,-5.4,46.4,67.74,5.43,100.0
+016,Hidalgo,Hidalgo,2332,25.53,1.0,46.9,52.36,2.99,93.67
+017,Jaumave,Jaumave,1299,24.07,1.7,46.9,57.42,2.34,97.44
+018,Jiménez,Santander Jiménez,2308,25.3,-1.7,47.1,67.5,6.06,100.0
+019,Llera,Llera de Canales,1196,25.3,1.6,48.6,61.76,3.24,100.0
+020,Mainero,Villa Mainero,2707,24.37,-0.8,45.3,54.7,3.44,96.77
+021,El Mante,Ciudad Mante,331,26.51,4.3,49.6,62.83,2.27,100.0
+022,Matamoros,Heroica Matamoros,3841,24.79,-3.0,41.0,75.82,11.51,100.0
+023,Méndez,Méndez,3271,25.26,-4.0,46.3,66.66,4.94,100.0
+024,Mier,Mier,4138,25.05,-5.1,46.9,63.56,5.16,100.0
+025,Miguel Alemán,Ciudad Miguel Alemán,4129,24.98,-5.2,46.8,64.75,5.24,100.0
+026,Miquihuana,Miquihuana,1508,16.61,-3.4,37.9,69.27,2.96,100.0
+027,Nuevo Laredo,Nuevo Laredo,4342,24.41,-6.4,47.8,61.33,4.59,100.0
+028,Nuevo Morelos,Nuevo Morelos,115,26.11,5.4,49.9,60.51,2.13,97.54
+029,Ocampo,Ocampo,490,26.31,5.8,50.3,57.19,2.07,95.09
+030,Padilla,Nueva Villa de Padilla,2107,25.62,-1.2,48.1,62.28,5.32,100.0
+031,Palmillas,Palmillas,1123,20.6,-0.2,43.5,66.02,2.51,100.0
+032,Reynosa,Reynosa,3978,24.71,-5.3,45.1,70.98,6.09,100.0
+033,Río Bravo,Ciudad Río Bravo,3925,24.74,-5.2,44.9,71.34,6.27,100.0
+034,San Carlos,San Carlos,2724,23.53,-4.1,45.3,67.17,5.52,100.0
+035,San Fernando,San Fernando,3037,24.69,-3.2,44.0,73.8,6.42,100.0
+036,San Nicolás,San Nicolás,2866,21.84,-6.2,43.5,71.56,5.83,100.0
+037,Soto la Marina,Soto la Marina,1812,25.27,-1.3,47.5,70.92,5.85,100.0
+038,Tampico,Tampico,1,25.47,5.6,39.9,79.58,16.59,100.0
+039,Tula,Ciudad Tula,713,21.18,1.2,43.9,64.02,2.21,100.0
+040,Valle Hermoso,Valle Hermoso,3659,24.83,-2.9,41.8,74.56,9.82,100.0
+041,Victoria,Ciudad Victoria,1737,25.63,1.1,48.0,56.85,3.9,96.23
+042,Villagrán,Villagrán,2561,23.9,-2.5,45.5,58.25,3.4,100.0
+043,Xicoténcatl,Xicoténcatl,732,25.74,2.4,48.7,65.6,2.46,100.0

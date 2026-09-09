@@ -1,0 +1,64 @@
+cvegeo,ciudad,municipio,cve_mun,cve_loc,es_cabecera,area_km2,lat_centro,lon_centro,conglomerado,nombre_conglomerado
+280320001,Reynosa,Reynosa,032,0001,True,169.8909,26.047301,-98.299626,37,Reynosa
+280270001,Nuevo Laredo,Nuevo Laredo,027,0001,True,126.7142,27.464852,-99.54375,19,Nuevo Laredo
+280220001,Heroica Matamoros,Matamoros,022,0001,True,117.9729,25.846859,-97.508913,52,Heroica Matamoros
+280410001,Ciudad Victoria,Victoria,041,0001,True,70.5526,23.740981,-99.142731,10,Ciudad Victoria
+280380001,Tampico,Tampico,038,0001,True,54.9661,22.266785,-97.871458,41,Tampico
+280090001,Ciudad Madero,Ciudad Madero,009,0001,True,48.0246,22.279482,-97.8283,41,Tampico
+280030122,Miramar,Altamira,003,0122,False,32.5905,22.359273,-97.8874,41,Tampico
+280330001,Ciudad Río Bravo,Río Bravo,033,0001,True,28.2883,25.988791,-98.092936,54,Ciudad Río Bravo
+280030001,Altamira,Altamira,003,0001,True,25.0269,22.411307,-97.927077,41,Tampico
+280210001,Ciudad Mante,El Mante,021,0001,True,23.1375,22.739768,-98.977452,21,Ciudad Mante
+280400001,Valle Hermoso,Valle Hermoso,040,0001,True,21.3493,25.670508,-97.812331,50,Valle Hermoso
+280350001,San Fernando,San Fernando,035,0001,True,20.057,24.845761,-98.147909,48,San Fernando
+280250001,Ciudad Miguel Alemán,Miguel Alemán,025,0001,True,14.688,26.390007,-99.036522,16,Ciudad Miguel Alemán
+280390001,Ciudad Tula,Tula,039,0001,True,9.4405,22.996429,-99.718324,3,Ciudad Tula
+280020001,Aldama,Aldama,002,0001,True,6.278,22.922959,-98.074834,44,Aldama
+280120001,González,González,012,0001,True,6.0023,22.827869,-98.430123,23,González
+280120170,Estación Manuel (Úrsulo Galván),González,012,0170,False,5.965,22.728832,-98.320576,43,Estación Manuel (Úrsulo Galván)
+280070001,Ciudad Camargo,Camargo,007,0001,True,5.9148,26.317603,-98.831886,40,Ciudad Camargo
+280010001,Abasolo,Abasolo,001,0001,True,5.8617,24.060654,-98.378844,29,Abasolo
+280160145,Estación Santa Engracia,Hidalgo,016,0145,False,5.6742,24.019929,-99.230399,11,Estación Santa Engracia
+280240001,Mier,Mier,024,0001,True,5.6336,26.431846,-99.150894,17,Mier
+280150001,Ciudad Gustavo Díaz Ordaz,Gustavo Díaz Ordaz,015,0001,True,5.5403,26.225901,-98.595896,39,Ciudad Gustavo Díaz Ordaz
+280140001,Nueva Ciudad Guerrero,Guerrero,014,0001,True,5.4513,26.562393,-99.226302,18,Nueva Ciudad Guerrero
+280370001,Soto la Marina,Soto la Marina,037,0001,True,5.12,23.769227,-98.2069,45,Soto la Marina
+280290001,Ocampo,Ocampo,029,0001,True,4.7741,22.844156,-99.33577,2,Ocampo
+280430001,Xicoténcatl,Xicoténcatl,043,0001,True,4.4969,22.994293,-98.943555,25,Xicoténcatl
+280170001,Jaumave,Jaumave,017,0001,True,4.233,23.40553,-99.380694,7,Jaumave
+280330291,Nuevo Progreso,Río Bravo,033,0291,False,3.9641,26.050618,-97.951183,55,Nuevo Progreso
+280180001,Santander Jiménez,Jiménez,018,0001,True,3.9239,24.217022,-98.486597,30,Santander Jiménez
+280160001,Hidalgo,Hidalgo,016,0001,True,3.869,24.245836,-99.435116,13,Hidalgo
+280190001,Llera de Canales,Llera,019,0001,True,3.5921,23.315691,-99.023575,6,Llera de Canales
+280350139,General Francisco Villa,San Fernando,035,0139,False,2.9826,25.017952,-98.076084,49,General Francisco Villa
+280400004,Anáhuac,Valle Hermoso,040,0004,False,2.9498,25.776277,-97.783101,51,Anáhuac
+280030043,Cuauhtémoc,Altamira,003,0043,False,2.8854,22.544871,-98.152449,42,Cuauhtémoc
+280110036,Gómez Farías,Gómez Farías,011,0036,True,2.8809,23.045971,-99.153915,4,Gómez Farías
+280250015,Los Guerra,Miguel Alemán,025,0015,False,2.8655,26.388586,-99.077611,16,Ciudad Miguel Alemán
+280310001,Palmillas,Palmillas,031,0001,True,2.5834,23.303525,-99.549496,5,Palmillas
+280040001,Antiguo Morelos,Antiguo Morelos,004,0001,True,2.5302,22.551622,-99.084756,1,Antiguo Morelos
+280300001,Nueva Villa de Padilla,Padilla,030,0001,True,2.5184,24.047233,-98.901764,28,Nueva Villa de Padilla
+280120061,Graciano Sánchez,González,012,0061,False,2.5124,22.654726,-98.555109,20,Graciano Sánchez
+280300009,Barretal,Padilla,030,0009,False,2.4074,24.083459,-99.121799,12,Barretal
+280220264,Ramírez,Matamoros,022,0264,False,2.3722,25.948508,-97.77914,53,Ramírez
+280260001,Miquihuana,Miquihuana,026,0001,True,2.3603,23.576024,-99.755064,9,Miquihuana
+280130001,Güémez,Güémez,013,0001,True,2.3343,23.918542,-99.007419,27,Güémez
+280280001,Nuevo Morelos,Nuevo Morelos,028,0001,True,2.3301,22.536256,-99.218246,0,Nuevo Morelos
+280210073,El Limón,El Mante,021,0073,False,2.0835,22.829399,-99.014213,22,El Limón
+280270162,El Campanario y Oradel,Nuevo Laredo,027,0162,False,1.9059,27.472389,-99.62276,19,Nuevo Laredo
+280050001,Burgos,Burgos,005,0001,True,1.8782,24.948271,-98.800542,34,Burgos
+280350542,Carboneras (La Carbonera),San Fernando,035,0542,False,1.8598,24.628526,-97.717255,47,Carboneras (La Carbonera)
+280010111,Guadalupe Victoria,Abasolo,001,0111,False,1.8398,24.08454,-98.2319,46,Guadalupe Victoria
+280070016,Comales,Camargo,007,0016,False,1.8224,26.180855,-98.920554,38,Comales
+280400067,El Realito,Valle Hermoso,040,0067,False,1.6779,25.664751,-97.876295,50,Valle Hermoso
+280430300,Primero de Mayo,Xicoténcatl,043,0300,False,1.65,22.960639,-98.959997,25,Xicoténcatl
+280220104,El Control,Matamoros,022,0104,False,1.4765,25.960691,-97.812112,53,Ramírez
+280230001,Méndez,Méndez,023,0001,True,1.335,25.117666,-98.58855,35,Méndez
+280420001,Villagrán,Villagrán,042,0001,True,1.3288,24.473075,-99.490732,14,Villagrán
+280110001,Loma Alta (Loma Alta de Gómez Farías),Gómez Farías,011,0001,False,1.295,22.883582,-99.025715,24,Loma Alta (Loma Alta de Gómez Farías)
+280060001,Bustamante,Bustamante,006,0001,True,1.2326,23.435517,-99.758648,8,Bustamante
+280340001,San Carlos,San Carlos,034,0001,True,1.1818,24.58365,-98.941061,31,San Carlos
+280100001,Cruillas,Cruillas,010,0001,True,1.1538,24.753541,-98.536684,33,Cruillas
+280200001,Villa Mainero,Mainero,020,0001,True,1.029,24.560454,-99.614855,15,Villa Mainero
+280080001,Casas,Casas,008,0001,True,0.9003,23.726634,-98.737035,26,Casas
+280360001,San Nicolás,San Nicolás,036,0001,True,0.1046,24.69358,-98.830292,32,San Nicolás

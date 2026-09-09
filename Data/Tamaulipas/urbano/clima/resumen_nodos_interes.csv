@@ -1,0 +1,13 @@
+cve_mun,ubicacion,nodo_id,temperature_media,temperature_min,temperature_max,relative_humidity_media,relative_humidity_min,relative_humidity_max
+021,Ciudad Mante,331,27.29,6.0,49.6,63.01,2.27,97.75
+009,Ciudad Madero,5,26.42,8.2,37.8,79.09,19.49,100.0
+038,Tampico,1,26.39,7.7,39.6,78.37,16.59,100.0
+003,Miramar,13,26.34,6.6,40.3,77.63,13.97,100.0
+041,Ciudad Victoria,1737,26.34,4.0,48.0,57.7,3.9,96.23
+003,Altamira,25,26.29,6.1,41.0,77.28,12.67,100.0
+040,Valle Hermoso,3659,25.51,-1.4,41.8,75.28,14.44,100.0
+035,San Fernando,3037,25.49,-2.2,44.0,73.98,9.2,100.0
+022,Heroica Matamoros,3841,25.46,-0.6,41.0,76.41,16.92,100.0
+033,Ciudad Río Bravo,3925,25.42,-2.7,44.7,72.24,13.02,100.0
+032,Reynosa,3978,25.38,-2.9,44.8,71.89,12.6,100.0
+027,Nuevo Laredo,4342,25.21,-4.5,44.1,61.06,7.54,100.0

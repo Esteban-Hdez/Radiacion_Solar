@@ -1,0 +1,242 @@
+nodo_id,cvegeo,ciudad,municipio,cve_mun,es_cabecera,conglomerado,nombre_conglomerado,metodo,peso,area_urbana_celda_km2,dist_centro_km,n_nodos_dentro,n_nodos_ciudad,calidad,region
+2120,280010001,Abasolo,Abasolo,001,True,29,Abasolo,celda,0.943752,5.532,1.179,0,4,baja,Centro
+2121,280010001,Abasolo,Abasolo,001,True,29,Abasolo,celda,0.033184,0.1945,4.101,0,4,baja,Centro
+2167,280010001,Abasolo,Abasolo,001,True,29,Abasolo,celda,0.02255,0.1322,3.235,0,4,baja,Centro
+2119,280010001,Abasolo,Abasolo,001,True,29,Abasolo,celda,0.000514,0.003,4.326,0,4,baja,Centro
+637,280020001,Aldama,Aldama,002,True,44,Aldama,celda,0.694106,4.3576,1.701,0,3,baja,Sur
+636,280020001,Aldama,Aldama,002,True,44,Aldama,celda,0.217051,1.3626,2.682,0,3,baja,Sur
+578,280020001,Aldama,Aldama,002,True,44,Aldama,celda,0.088843,0.5578,3.933,0,3,baja,Sur
+25,280030001,Altamira,Altamira,003,True,41,Tampico,dentro,0.573937,14.3639,1.331,2,8,media,Sur
+26,280030001,Altamira,Altamira,003,True,41,Tampico,dentro,0.311096,7.7858,2.777,2,8,media,Sur
+12,280030001,Altamira,Altamira,003,True,41,Tampico,celda,0.047721,1.1943,4.739,2,8,media,Sur
+75,280030001,Altamira,Altamira,003,True,41,Tampico,celda,0.027215,0.6811,6.895,2,8,media,Sur
+24,280030001,Altamira,Altamira,003,True,41,Tampico,celda,0.017694,0.4428,5.422,2,8,media,Sur
+76,280030001,Altamira,Altamira,003,True,41,Tampico,celda,0.012972,0.3247,4.463,2,8,media,Sur
+27,280030001,Altamira,Altamira,003,True,41,Tampico,celda,0.008633,0.2161,6.872,2,8,media,Sur
+13,280030001,Altamira,Altamira,003,True,41,Tampico,celda,0.000731,0.0183,5.329,2,8,media,Sur
+154,280040001,Antiguo Morelos,Antiguo Morelos,004,True,1,Antiguo Morelos,celda,0.495785,1.2544,2.555,0,4,baja,Mante
+118,280040001,Antiguo Morelos,Antiguo Morelos,004,True,1,Antiguo Morelos,celda,0.356897,0.903,2.847,0,4,baja,Mante
+155,280040001,Antiguo Morelos,Antiguo Morelos,004,True,1,Antiguo Morelos,celda,0.119674,0.3028,3.242,0,4,baja,Mante
+119,280040001,Antiguo Morelos,Antiguo Morelos,004,True,1,Antiguo Morelos,celda,0.027644,0.0699,3.477,0,4,baja,Mante
+3764,280400004,Anáhuac,Valle Hermoso,040,False,51,Anáhuac,celda,0.960159,2.8323,0.758,0,2,baja,Fronteriza
+3763,280400004,Anáhuac,Valle Hermoso,040,False,51,Anáhuac,celda,0.039841,0.1175,3.748,0,2,baja,Fronteriza
+2148,280300009,Barretal,Padilla,030,False,12,Barretal,celda,0.598783,1.4415,1.977,0,2,baja,Centro
+2149,280300009,Barretal,Padilla,030,False,12,Barretal,celda,0.401217,0.9659,2.319,0,2,baja,Centro
+3094,280050001,Burgos,Burgos,005,True,34,Burgos,celda,0.402801,0.7565,2.806,0,4,baja,Valle de San Fernando
+3095,280050001,Burgos,Burgos,005,True,34,Burgos,celda,0.28558,0.5364,2.883,0,4,baja,Valle de San Fernando
+3133,280050001,Burgos,Burgos,005,True,34,Burgos,celda,0.240963,0.4526,3.161,0,4,baja,Valle de San Fernando
+3132,280050001,Burgos,Burgos,005,True,34,Burgos,celda,0.070656,0.1327,3.091,0,4,baja,Valle de San Fernando
+1344,280060001,Bustamante,Bustamante,006,True,8,Bustamante,celda,0.626486,0.7722,2.477,0,3,baja,Altiplano
+1343,280060001,Bustamante,Bustamante,006,True,8,Bustamante,celda,0.340308,0.4195,2.693,0,3,baja,Altiplano
+1290,280060001,Bustamante,Bustamante,006,True,8,Bustamante,celda,0.033206,0.0409,3.39,0,3,baja,Altiplano
+2803,280350542,Carboneras (La Carbonera),San Fernando,035,False,47,Carboneras (La Carbonera),celda,0.999509,0.6357,3.068,0,2,baja,Valle de San Fernando
+2848,280350542,Carboneras (La Carbonera),San Fernando,035,False,47,Carboneras (La Carbonera),celda,0.000491,0.0003,3.293,0,2,baja,Valle de San Fernando
+1747,280080001,Casas,Casas,008,True,26,Casas,dentro,1.0,0.9003,0.477,1,1,media,Centro
+4118,280070001,Ciudad Camargo,Camargo,007,True,40,Ciudad Camargo,celda,0.678652,4.0141,1.807,0,4,baja,Fronteriza
+4101,280070001,Ciudad Camargo,Camargo,007,True,40,Ciudad Camargo,celda,0.211235,1.2494,3.266,0,4,baja,Fronteriza
+4117,280070001,Ciudad Camargo,Camargo,007,True,40,Ciudad Camargo,celda,0.083077,0.4914,3.112,0,4,baja,Fronteriza
+4100,280070001,Ciudad Camargo,Camargo,007,True,40,Ciudad Camargo,celda,0.027037,0.1599,4.134,0,4,baja,Fronteriza
+4069,280150001,Ciudad Gustavo Díaz Ordaz,Gustavo Díaz Ordaz,015,True,39,Ciudad Gustavo Díaz Ordaz,celda,0.827015,2.7607,2.362,0,2,baja,Fronteriza
+4068,280150001,Ciudad Gustavo Díaz Ordaz,Gustavo Díaz Ordaz,015,True,39,Ciudad Gustavo Díaz Ordaz,celda,0.172985,0.5774,2.971,0,2,baja,Fronteriza
+5,280090001,Ciudad Madero,Ciudad Madero,009,True,41,Tampico,dentro,0.477606,16.2591,1.437,1,5,media,Sur
+1,280090001,Ciudad Madero,Ciudad Madero,009,True,41,Tampico,celda,0.172862,5.8848,4.595,1,5,media,Sur
+4,280090001,Ciudad Madero,Ciudad Madero,009,True,41,Tampico,celda,0.170859,5.8166,3.45,1,5,media,Sur
+10,280090001,Ciudad Madero,Ciudad Madero,009,True,41,Tampico,celda,0.119418,4.0653,5.63,1,5,media,Sur
+9,280090001,Ciudad Madero,Ciudad Madero,009,True,41,Tampico,celda,0.059254,2.0172,6.444,1,5,media,Sur
+331,280210001,Ciudad Mante,El Mante,021,True,21,Ciudad Mante,dentro,0.484289,11.2052,1.107,1,8,media,Mante
+387,280210001,Ciudad Mante,El Mante,021,True,21,Ciudad Mante,celda,0.209956,4.8579,3.34,1,8,media,Mante
+332,280210001,Ciudad Mante,El Mante,021,True,21,Ciudad Mante,celda,0.081614,1.8883,3.975,1,8,media,Mante
+282,280210001,Ciudad Mante,El Mante,021,True,21,Ciudad Mante,celda,0.065509,1.5157,5.488,1,8,media,Mante
+386,280210001,Ciudad Mante,El Mante,021,True,21,Ciudad Mante,celda,0.063426,1.4675,5.475,1,8,media,Mante
+388,280210001,Ciudad Mante,El Mante,021,True,21,Ciudad Mante,celda,0.049587,1.1473,5.072,1,8,media,Mante
+330,280210001,Ciudad Mante,El Mante,021,True,21,Ciudad Mante,celda,0.044519,1.0301,4.478,1,8,media,Mante
+283,280210001,Ciudad Mante,El Mante,021,True,21,Ciudad Mante,celda,0.001101,0.0255,6.686,1,8,media,Mante
+4129,280250001,Ciudad Miguel Alemán,Miguel Alemán,025,True,16,Ciudad Miguel Alemán,celda,0.619438,3.8674,2.751,0,2,baja,Fronteriza
+4128,280250001,Ciudad Miguel Alemán,Miguel Alemán,025,True,16,Ciudad Miguel Alemán,celda,0.380562,2.376,3.212,0,2,baja,Fronteriza
+3924,280330001,Ciudad Río Bravo,Río Bravo,033,True,54,Ciudad Río Bravo,celda,0.242353,6.8558,2.189,2,6,media,Fronteriza
+3925,280330001,Ciudad Río Bravo,Río Bravo,033,True,54,Ciudad Río Bravo,celda,0.212703,6.017,3.882,2,6,media,Fronteriza
+3951,280330001,Ciudad Río Bravo,Río Bravo,033,True,54,Ciudad Río Bravo,dentro,0.209135,5.9161,2.443,2,6,media,Fronteriza
+3952,280330001,Ciudad Río Bravo,Río Bravo,033,True,54,Ciudad Río Bravo,dentro,0.155558,4.4005,4.031,2,6,media,Fronteriza
+3950,280330001,Ciudad Río Bravo,Río Bravo,033,True,54,Ciudad Río Bravo,celda,0.096959,2.7428,5.241,2,6,media,Fronteriza
+3923,280330001,Ciudad Río Bravo,Río Bravo,033,True,54,Ciudad Río Bravo,celda,0.083292,2.3562,5.129,2,6,media,Fronteriza
+713,280390001,Ciudad Tula,Tula,039,True,3,Ciudad Tula,celda,0.526348,4.969,2.393,0,4,baja,Altiplano
+654,280390001,Ciudad Tula,Tula,039,True,3,Ciudad Tula,celda,0.221442,2.0905,3.655,0,4,baja,Altiplano
+712,280390001,Ciudad Tula,Tula,039,True,3,Ciudad Tula,celda,0.215227,2.0318,2.668,0,4,baja,Altiplano
+655,280390001,Ciudad Tula,Tula,039,True,3,Ciudad Tula,celda,0.036984,0.3491,3.459,0,4,baja,Altiplano
+1737,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,dentro,0.244836,17.2738,1.241,3,12,alta,Centro
+1789,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,dentro,0.175971,12.4152,3.208,3,12,alta,Centro
+1736,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,dentro,0.155328,10.9588,3.968,3,12,alta,Centro
+1738,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,celda,0.129648,9.147,4.499,3,12,alta,Centro
+1788,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,celda,0.120238,8.4831,4.949,3,12,alta,Centro
+1790,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,celda,0.076857,5.4225,5.384,3,12,alta,Centro
+1684,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,celda,0.04512,3.1834,5.622,3,12,alta,Centro
+1683,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,celda,0.035927,2.5347,6.769,3,12,alta,Centro
+1685,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,celda,0.007579,0.5347,7.093,3,12,alta,Centro
+1739,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,celda,0.006911,0.4876,8.476,3,12,alta,Centro
+1835,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,celda,0.001244,0.0877,7.608,3,12,alta,Centro
+1834,280410001,Ciudad Victoria,Victoria,041,True,10,Ciudad Victoria,celda,0.000341,0.0241,8.49,3,12,alta,Centro
+4039,280070016,Comales,Camargo,007,False,38,Comales,celda,0.560188,1.0209,2.276,0,3,baja,Fronteriza
+4040,280070016,Comales,Camargo,007,False,38,Comales,celda,0.429178,0.7821,2.37,0,3,baja,Fronteriza
+4061,280070016,Comales,Camargo,007,False,38,Comales,celda,0.010634,0.0194,3.81,0,3,baja,Fronteriza
+2953,280100001,Cruillas,Cruillas,010,True,33,Cruillas,celda,0.773472,0.8924,1.844,0,2,baja,Valle de San Fernando
+2915,280100001,Cruillas,Cruillas,010,True,33,Cruillas,celda,0.226528,0.2614,2.615,0,2,baja,Valle de San Fernando
+142,280030043,Cuauhtémoc,Altamira,003,False,42,Cuauhtémoc,celda,0.744916,2.1494,2.075,0,3,baja,Sur
+178,280030043,Cuauhtémoc,Altamira,003,False,42,Cuauhtémoc,celda,0.184245,0.5316,3.047,0,3,baja,Sur
+141,280030043,Cuauhtémoc,Altamira,003,False,42,Cuauhtémoc,celda,0.070838,0.2044,3.26,0,3,baja,Sur
+4350,280270162,El Campanario y Oradel,Nuevo Laredo,027,False,19,Nuevo Laredo,celda,0.716578,1.3658,1.964,0,2,baja,Fronteriza
+4340,280270162,El Campanario y Oradel,Nuevo Laredo,027,False,19,Nuevo Laredo,celda,0.283422,0.5402,2.488,0,2,baja,Fronteriza
+3931,280220104,El Control,Matamoros,022,False,53,Ramírez,celda,0.98342,1.452,1.293,0,3,baja,Fronteriza
+3932,280220104,El Control,Matamoros,022,False,53,Ramírez,celda,0.01277,0.0189,3.362,0,3,baja,Fronteriza
+3900,280220104,El Control,Matamoros,022,False,53,Ramírez,celda,0.003809,0.0056,3.475,0,3,baja,Fronteriza
+442,280210073,El Limón,El Mante,021,False,22,El Limón,celda,0.518367,1.08,2.217,0,3,baja,Mante
+498,280210073,El Limón,El Mante,021,False,22,El Limón,celda,0.441238,0.9193,2.345,0,3,baja,Mante
+443,280210073,El Limón,El Mante,021,False,22,El Limón,celda,0.040395,0.0842,4.095,0,3,baja,Mante
+3658,280400067,El Realito,Valle Hermoso,040,False,50,Valle Hermoso,celda,0.678274,1.1381,2.301,0,3,baja,Fronteriza
+3657,280400067,El Realito,Valle Hermoso,040,False,50,Valle Hermoso,celda,0.320879,0.5384,2.873,0,3,baja,Fronteriza
+3692,280400067,El Realito,Valle Hermoso,040,False,50,Valle Hermoso,celda,0.000847,0.0014,3.225,0,3,baja,Fronteriza
+347,280120170,Estación Manuel (Úrsulo Galván),González,012,False,43,Estación Manuel (Úrsulo Galván),celda,0.545475,3.2537,1.989,0,2,baja,Sur
+348,280120170,Estación Manuel (Úrsulo Galván),González,012,False,43,Estación Manuel (Úrsulo Galván),celda,0.454525,2.7112,2.106,0,2,baja,Sur
+2053,280160145,Estación Santa Engracia,Hidalgo,016,False,11,Estación Santa Engracia,celda,0.402895,2.2861,1.518,0,4,baja,Centro
+2052,280160145,Estación Santa Engracia,Hidalgo,016,False,11,Estación Santa Engracia,celda,0.386867,2.1952,3.189,0,4,baja,Centro
+2054,280160145,Estación Santa Engracia,Hidalgo,016,False,11,Estación Santa Engracia,celda,0.174656,0.991,5.216,0,4,baja,Centro
+2051,280160145,Estación Santa Engracia,Hidalgo,016,False,11,Estación Santa Engracia,celda,0.035582,0.2019,7.127,0,4,baja,Centro
+3187,280350139,General Francisco Villa,San Fernando,035,False,49,General Francisco Villa,celda,0.731448,2.1816,1.838,0,2,baja,Valle de San Fernando
+3186,280350139,General Francisco Villa,San Fernando,035,False,49,General Francisco Villa,celda,0.268552,0.801,2.557,0,2,baja,Valle de San Fernando
+457,280120001,González,González,012,True,23,González,celda,0.568312,3.4112,2.223,0,4,baja,Sur
+513,280120001,González,González,012,True,23,González,celda,0.313183,1.8798,2.648,0,4,baja,Sur
+512,280120001,González,González,012,True,23,González,celda,0.080059,0.4805,3.905,0,4,baja,Sur
+456,280120001,González,González,012,True,23,González,celda,0.038445,0.2308,3.631,0,4,baja,Sur
+246,280120061,Graciano Sánchez,González,012,False,20,Graciano Sánchez,celda,0.877579,2.2048,1.63,0,2,baja,Sur
+245,280120061,Graciano Sánchez,González,012,False,20,Graciano Sánchez,celda,0.122421,0.3076,2.597,0,2,baja,Sur
+2171,280010111,Guadalupe Victoria,Abasolo,001,False,46,Guadalupe Victoria,celda,1.0,1.8398,1.345,0,1,baja,Centro
+784,280110036,Gómez Farías,Gómez Farías,011,True,4,Gómez Farías,celda,0.918222,2.6453,1.486,0,3,baja,Mante
+727,280110036,Gómez Farías,Gómez Farías,011,True,4,Gómez Farías,celda,0.053265,0.1535,4.208,0,3,baja,Mante
+783,280110036,Gómez Farías,Gómez Farías,011,True,4,Gómez Farías,celda,0.028513,0.0821,2.696,0,3,baja,Mante
+1969,280130001,Güémez,Güémez,013,True,27,Güémez,celda,0.978749,2.2847,1.793,0,2,baja,Centro
+1970,280130001,Güémez,Güémez,013,True,27,Güémez,celda,0.021251,0.0496,3.05,0,2,baja,Centro
+3841,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,dentro,0.15747,17.6044,0.954,6,17,alta,Fronteriza
+3842,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,dentro,0.141133,15.7779,4.893,6,17,alta,Fronteriza
+3840,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,dentro,0.13215,14.7738,3.121,6,17,alta,Fronteriza
+3806,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,dentro,0.121077,13.5359,4.161,6,17,alta,Fronteriza
+3874,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,dentro,0.112654,12.5941,5.679,6,17,alta,Fronteriza
+3805,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,celda,0.070761,7.9107,5.113,6,17,alta,Fronteriza
+3875,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,dentro,0.065246,7.2942,4.84,6,17,alta,Fronteriza
+3807,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,celda,0.063821,7.1349,6.352,6,17,alta,Fronteriza
+3839,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,celda,0.062852,7.0265,7.101,6,17,alta,Fronteriza
+3873,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,celda,0.022009,2.4605,8.54,6,17,alta,Fronteriza
+3770,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,celda,0.018243,2.0395,9.025,6,17,alta,Fronteriza
+3804,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,celda,0.009474,1.0592,8.176,6,17,alta,Fronteriza
+3808,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,celda,0.008741,0.9772,9.76,6,17,alta,Fronteriza
+3771,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,celda,0.008171,0.9134,8.522,6,17,alta,Fronteriza
+3838,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,celda,0.004442,0.4965,11.09,6,17,alta,Fronteriza
+3907,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,celda,0.001097,0.1226,9.679,6,17,alta,Fronteriza
+3906,280220001,Heroica Matamoros,Matamoros,022,True,52,Heroica Matamoros,celda,0.00066,0.0738,11.59,6,17,alta,Fronteriza
+2332,280160001,Hidalgo,Hidalgo,016,True,13,Hidalgo,celda,0.777365,3.0076,1.594,0,2,baja,Centro
+2331,280160001,Hidalgo,Hidalgo,016,True,13,Hidalgo,celda,0.222635,0.8614,2.555,0,2,baja,Centro
+1299,280170001,Jaumave,Jaumave,017,True,7,Jaumave,dentro,0.999265,4.2298,0.497,1,2,media,Altiplano
+1298,280170001,Jaumave,Jaumave,017,True,7,Jaumave,celda,0.000735,0.0031,4.026,1,2,media,Altiplano
+1196,280190001,Llera de Canales,Llera,019,True,6,Llera de Canales,celda,0.89607,3.2188,1.617,0,2,baja,Centro
+1136,280190001,Llera de Canales,Llera,019,True,6,Llera de Canales,celda,0.10393,0.3733,2.853,0,2,baja,Centro
+554,280110001,Loma Alta (Loma Alta de Gómez Farías),Gómez Farías,011,False,24,Loma Alta (Loma Alta de Gómez Farías),celda,1.0,1.295,0.916,0,1,baja,Mante
+4128,280250015,Los Guerra,Miguel Alemán,025,False,16,Ciudad Miguel Alemán,celda,0.543456,1.0981,2.696,0,3,baja,Fronteriza
+4127,280250015,Los Guerra,Miguel Alemán,025,False,16,Ciudad Miguel Alemán,celda,0.230716,0.4662,3.026,0,3,baja,Fronteriza
+4139,280250015,Los Guerra,Miguel Alemán,025,False,16,Ciudad Miguel Alemán,celda,0.225828,0.4563,3.245,0,3,baja,Fronteriza
+4146,280240001,Mier,Mier,024,True,17,Mier,celda,0.536231,3.0209,2.277,0,4,baja,Fronteriza
+4138,280240001,Mier,Mier,024,True,17,Mier,celda,0.424555,2.3918,2.642,0,4,baja,Fronteriza
+4137,280240001,Mier,Mier,024,True,17,Mier,celda,0.038851,0.2189,3.764,0,4,baja,Fronteriza
+4145,280240001,Mier,Mier,024,True,17,Mier,celda,0.000362,0.002,3.517,0,4,baja,Fronteriza
+1508,280260001,Miquihuana,Miquihuana,026,True,9,Miquihuana,celda,0.777153,1.8343,1.667,0,2,baja,Altiplano
+1507,280260001,Miquihuana,Miquihuana,026,True,9,Miquihuana,celda,0.222847,0.526,2.617,0,2,baja,Altiplano
+13,280030122,Miramar,Altamira,003,False,41,Tampico,dentro,0.446006,14.5356,1.75,2,6,media,Sur
+9,280030122,Miramar,Altamira,003,False,41,Tampico,dentro,0.233158,7.5987,4.276,2,6,media,Sur
+8,280030122,Miramar,Altamira,003,False,41,Tampico,celda,0.125213,4.0808,3.474,2,6,media,Sur
+26,280030122,Miramar,Altamira,003,False,41,Tampico,celda,0.098454,3.2087,5.735,2,6,media,Sur
+14,280030122,Miramar,Altamira,003,False,41,Tampico,celda,0.097165,3.1667,3.046,2,6,media,Sur
+12,280030122,Miramar,Altamira,003,False,41,Tampico,celda,5e-06,0.0002,5.517,2,6,media,Sur
+3271,280230001,Méndez,Méndez,023,True,35,Méndez,celda,0.994089,1.3271,1.607,0,2,baja,Valle de San Fernando
+3241,280230001,Méndez,Méndez,023,True,35,Méndez,celda,0.005911,0.0079,3.168,0,2,baja,Valle de San Fernando
+4167,280140001,Nueva Ciudad Guerrero,Guerrero,014,True,18,Nueva Ciudad Guerrero,dentro,0.903122,4.9232,1.047,1,2,media,Fronteriza
+4166,280140001,Nueva Ciudad Guerrero,Guerrero,014,True,18,Nueva Ciudad Guerrero,celda,0.096878,0.5281,3.448,1,2,media,Fronteriza
+2107,280300001,Nueva Villa de Padilla,Padilla,030,True,28,Nueva Villa de Padilla,dentro,1.0,2.5184,0.353,1,1,media,Centro
+4342,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,dentro,0.137521,17.4176,1.682,6,17,alta,Fronteriza
+4352,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,dentro,0.129226,16.367,2.803,6,17,alta,Fronteriza
+4334,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,dentro,0.1202,15.2238,6.07,6,17,alta,Fronteriza
+4343,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,dentro,0.092122,11.6676,4.613,6,17,alta,Fronteriza
+4353,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,dentro,0.091668,11.61,5.128,6,17,alta,Fronteriza
+4351,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,celda,0.091393,11.5753,4.525,6,17,alta,Fronteriza
+4363,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,dentro,0.089885,11.3843,7.206,6,17,alta,Fronteriza
+4341,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,celda,0.072247,9.1504,3.931,6,17,alta,Fronteriza
+4362,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,celda,0.066806,8.4612,8.034,6,17,alta,Fronteriza
+4333,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,celda,0.026976,3.4167,7.034,6,17,alta,Fronteriza
+4328,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,celda,0.025384,3.215,10.484,6,17,alta,Fronteriza
+4327,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,celda,0.024933,3.1579,11.07,6,17,alta,Fronteriza
+4335,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,celda,0.018344,2.3233,7.437,6,17,alta,Fronteriza
+4350,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,celda,0.007432,0.9413,8.01,6,17,alta,Fronteriza
+4361,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,celda,0.003406,0.4314,10.403,6,17,alta,Fronteriza
+4340,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,celda,0.002368,0.2999,7.691,6,17,alta,Fronteriza
+4372,280270001,Nuevo Laredo,Nuevo Laredo,027,True,19,Nuevo Laredo,celda,8.8e-05,0.0111,11.622,6,17,alta,Fronteriza
+115,280280001,Nuevo Morelos,Nuevo Morelos,028,True,0,Nuevo Morelos,celda,0.936211,2.1814,0.712,0,2,baja,Mante
+151,280280001,Nuevo Morelos,Nuevo Morelos,028,True,0,Nuevo Morelos,celda,0.063789,0.1486,3.721,0,2,baja,Mante
+3987,280330291,Nuevo Progreso,Río Bravo,033,False,55,Nuevo Progreso,celda,0.914246,3.6242,1.116,0,2,baja,Fronteriza
+3986,280330291,Nuevo Progreso,Río Bravo,033,False,55,Nuevo Progreso,celda,0.085754,0.3399,2.872,0,2,baja,Fronteriza
+490,280290001,Ocampo,Ocampo,029,True,2,Ocampo,dentro,1.0,4.7741,0.775,1,1,media,Mante
+1123,280310001,Palmillas,Palmillas,031,True,5,Palmillas,celda,0.864382,2.233,1.776,0,2,baja,Altiplano
+1183,280310001,Palmillas,Palmillas,031,True,5,Palmillas,celda,0.135618,0.3504,3.072,0,2,baja,Altiplano
+673,280430300,Primero de Mayo,Xicoténcatl,043,False,25,Xicoténcatl,celda,0.588868,0.9716,2.286,0,2,baja,Mante
+674,280430300,Primero de Mayo,Xicoténcatl,043,False,25,Xicoténcatl,celda,0.411132,0.6784,2.285,0,2,baja,Mante
+3901,280220264,Ramírez,Matamoros,022,False,53,Ramírez,celda,0.621997,1.4755,2.043,0,3,baja,Fronteriza
+3932,280220264,Ramírez,Matamoros,022,False,53,Ramírez,celda,0.376554,0.8933,2.372,0,3,baja,Fronteriza
+3931,280220264,Ramírez,Matamoros,022,False,53,Ramírez,celda,0.001449,0.0034,4.713,0,3,baja,Fronteriza
+3978,280320001,Reynosa,Reynosa,032,True,37,Reynosa,dentro,0.102921,16.8832,0.3,8,25,alta,Fronteriza
+3979,280320001,Reynosa,Reynosa,032,True,37,Reynosa,dentro,0.102027,16.7365,3.959,8,25,alta,Fronteriza
+4011,280320001,Reynosa,Reynosa,032,True,37,Reynosa,dentro,0.100209,16.4383,4.709,8,25,alta,Fronteriza
+3977,280320001,Reynosa,Reynosa,032,True,37,Reynosa,dentro,0.099165,16.2671,4.033,8,25,alta,Fronteriza
+3947,280320001,Reynosa,Reynosa,032,True,37,Reynosa,dentro,0.09858,16.1711,5.702,8,25,alta,Fronteriza
+3976,280320001,Reynosa,Reynosa,032,True,37,Reynosa,dentro,0.095123,15.604,8.013,8,25,alta,Fronteriza
+3948,280320001,Reynosa,Reynosa,032,True,37,Reynosa,dentro,0.086649,14.214,8.937,8,25,alta,Fronteriza
+4010,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.05389,8.8401,6.193,8,25,alta,Fronteriza
+3980,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.047831,7.8462,7.938,8,25,alta,Fronteriza
+3946,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.042586,6.9859,4.114,8,25,alta,Fronteriza
+3975,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.023703,3.8882,11.996,8,25,alta,Fronteriza
+4009,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.022958,3.766,9.288,8,25,alta,Fronteriza
+3945,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.022604,3.708,5.754,8,25,alta,Fronteriza
+3944,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.018605,3.052,9.003,8,25,alta,Fronteriza
+4033,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.017798,2.9196,9.121,8,25,alta,Fronteriza
+4032,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.015576,2.5551,9.968,8,25,alta,Fronteriza
+3920,280320001,Reynosa,Reynosa,032,True,37,Reynosa,dentro,0.011043,1.8115,9.396,8,25,alta,Fronteriza
+3943,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.010438,1.7122,12.68,8,25,alta,Fronteriza
+3949,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.010406,1.7069,12.61,8,25,alta,Fronteriza
+3919,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.007711,1.2649,8.525,8,25,alta,Fronteriza
+3889,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.003022,0.4957,13.526,8,25,alta,Fronteriza
+3922,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.00274,0.4494,14.656,8,25,alta,Fronteriza
+3981,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.002575,0.4225,11.922,8,25,alta,Fronteriza
+3921,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.001671,0.2741,11.647,8,25,alta,Fronteriza
+4008,280320001,Reynosa,Reynosa,032,True,37,Reynosa,celda,0.000169,0.0277,12.882,8,25,alta,Fronteriza
+2724,280340001,San Carlos,San Carlos,034,True,31,San Carlos,celda,1.0,1.1818,1.508,0,1,baja,Centro
+3037,280350001,San Fernando,San Fernando,035,True,48,San Fernando,dentro,0.642216,12.8809,0.922,1,5,media,Valle de San Fernando
+3036,280350001,San Fernando,San Fernando,035,True,48,San Fernando,celda,0.262846,5.2719,3.26,1,5,media,Valle de San Fernando
+3000,280350001,San Fernando,San Fernando,035,True,48,San Fernando,celda,0.046331,0.9293,4.02,1,5,media,Valle de San Fernando
+3038,280350001,San Fernando,San Fernando,035,True,48,San Fernando,celda,0.032344,0.6487,4.84,1,5,media,Valle de San Fernando
+2999,280350001,San Fernando,San Fernando,035,True,48,San Fernando,celda,0.016264,0.3262,5.094,1,5,media,Valle de San Fernando
+2866,280360001,San Nicolás,San Nicolás,036,True,32,San Nicolás,celda,1.0,0.1046,1.109,0,1,baja,Centro
+2308,280180001,Santander Jiménez,Jiménez,018,True,30,Santander Jiménez,celda,0.849881,3.3348,1.56,0,2,baja,Centro
+2309,280180001,Santander Jiménez,Jiménez,018,True,30,Santander Jiménez,celda,0.150119,0.5891,2.796,0,2,baja,Centro
+1812,280370001,Soto la Marina,Soto la Marina,037,True,45,Soto la Marina,celda,0.806723,4.1304,1.331,0,2,baja,Centro
+1813,280370001,Soto la Marina,Soto la Marina,037,True,45,Soto la Marina,celda,0.193277,0.9896,2.728,0,2,baja,Centro
+4,280380001,Tampico,Tampico,038,True,41,Tampico,dentro,0.278848,12.2516,2.814,2,6,media,Sur
+1,280380001,Tampico,Tampico,038,True,41,Tampico,dentro,0.277424,12.1891,2.191,2,6,media,Sur
+3,280380001,Tampico,Tampico,038,True,41,Tampico,celda,0.17182,7.5492,3.886,2,6,media,Sur
+0,280380001,Tampico,Tampico,038,True,41,Tampico,celda,0.111601,4.9034,3.462,2,6,media,Sur
+9,280380001,Tampico,Tampico,038,True,41,Tampico,celda,0.090989,3.9977,7.062,2,6,media,Sur
+8,280380001,Tampico,Tampico,038,True,41,Tampico,celda,0.069318,3.0456,7.553,2,6,media,Sur
+3693,280400001,Valle Hermoso,Valle Hermoso,040,True,50,Valle Hermoso,dentro,0.363599,7.7626,2.282,2,6,media,Fronteriza
+3659,280400001,Valle Hermoso,Valle Hermoso,040,True,50,Valle Hermoso,dentro,0.321324,6.86,2.387,2,6,media,Fronteriza
+3660,280400001,Valle Hermoso,Valle Hermoso,040,True,50,Valle Hermoso,celda,0.130178,2.7792,3.943,2,6,media,Fronteriza
+3694,280400001,Valle Hermoso,Valle Hermoso,040,True,50,Valle Hermoso,celda,0.122559,2.6165,3.88,2,6,media,Fronteriza
+3658,280400001,Valle Hermoso,Valle Hermoso,040,True,50,Valle Hermoso,celda,0.046076,0.9837,5.273,2,6,media,Fronteriza
+3692,280400001,Valle Hermoso,Valle Hermoso,040,True,50,Valle Hermoso,celda,0.016264,0.3472,5.225,2,6,media,Fronteriza
+2707,280200001,Villa Mainero,Mainero,020,True,15,Villa Mainero,celda,1.0,1.029,1.173,0,1,baja,Centro
+2608,280420001,Villagrán,Villagrán,042,True,14,Villagrán,celda,0.804045,1.0684,2.086,0,2,baja,Centro
+2561,280420001,Villagrán,Villagrán,042,True,14,Villagrán,celda,0.195955,0.2604,2.709,0,2,baja,Centro
+732,280430001,Xicoténcatl,Xicoténcatl,043,True,25,Xicoténcatl,celda,0.758058,3.4089,1.768,0,2,baja,Mante
+674,280430001,Xicoténcatl,Xicoténcatl,043,True,25,Xicoténcatl,celda,0.241942,1.088,2.7,0,2,baja,Mante
