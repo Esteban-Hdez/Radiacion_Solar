@@ -7,6 +7,52 @@ Cruza hora a hora, **en UTC**, las series de las tres fuentes y calcula sesgo,
 MAE, RMSE y correlación por nodo y variable. No hay conversión de huso: las tres
 vienen en UTC y convertirlas solo añadiría oportunidades de error.
 
+## ⚠ Las dos fuentes NO etiquetan la hora igual: usa `--alinear`
+
+Estar las dos en UTC no basta para que casen. Cada una pone la etiqueta en un
+extremo distinto del intervalo horario:
+
+- **NSRDB** etiqueta con el **inicio**: el valor `12:00` es el promedio de
+  12:00–13:00.
+- **ERA5** acumula `ssrd` sobre la hora anterior y etiqueta con el **final**: el
+  valor `13:00` es lo acumulado entre 12:00 y 13:00.
+
+El mismo intervalo físico lleva dos etiquetas distintas, así que el merge directo
+—`on=["nodo_id", "datetime_utc"]`— empareja la hora `t` de ERA5 con la hora `t`
+del NSRDB, que es en realidad la `t−1` de ERA5. La comparación sale desplazada un
+paso completo.
+
+Se ve en el perfil diurno medio (junio 2024, Victoria, W/m²): ERA5 en `t` es el
+NSRDB en `t−1`.
+
+| hora UTC | NSRDB | ERA5-Land |
+|---|---|---|
+| 12 | 66.4 | 0.4 |
+| 13 | 227.6 | 65.2 |
+| 14 | 395.1 | 225.5 |
+
+Y lo que cuesta no corregirlo, en Victoria 2024:
+
+| variable | RMSE sin alinear | RMSE alineado |
+|---|---|---|
+| `ghi` | 121.11 W/m² | **75.71 W/m²** (−37 %) |
+| `temperature` | 3.93 °C | 3.37 °C |
+| `pressure` | 25.62 mbar | 25.61 mbar |
+
+**Por qué el parámetro es opcional y no el comportamiento por omisión**: las
+cifras ya publicadas en `copernicus/README.md` se midieron sin alinear, y cambiar
+el default en silencio las volvería irreproducibles sin avisar a nadie. Así que
+`alinear=False` sigue siendo lo de fábrica, pero la salida dice siempre en qué
+modo se calculó y el CLI lo avisa en pantalla. **Para medir de verdad la
+discrepancia entre fuentes hay que pasar `--alinear`.**
+
+**El matiz que hay que respetar**: la hora exacta solo aplica al **GHI**, que
+viene de la acumulación. En las instantáneas de ERA5 (`t2m`, `sp`, `u10`, `v10`)
+el desajuste frente al NSRDB —media de `[t, t+1)`, centrada en `t+30min`— es de
+**media hora**, y con datos horarios no se puede resolver medio paso: alinear
+mejora el resultado pero no lo deja exacto. Es una aproximación que hay que
+elegir y documentar, no mezclar entre análisis.
+
 ## Qué NO es una comparación limpia
 
 Conviene tenerlo delante al leer la tabla, porque parte de la diferencia no es
@@ -63,8 +109,24 @@ def _dif_circular(a, b):
     return (np.asarray(a) - np.asarray(b) + 180.0) % 360.0 - 180.0
 
 
-def cruzar(anios, meses, productos=("land", "single")) -> pd.DataFrame:
-    """Tabla larga con una fila por (nodo, hora, producto) y las dos fuentes."""
+def cruzar(anios, meses, productos=("land", "single"),
+           alinear: bool = False) -> pd.DataFrame:
+    """
+    Tabla larga con una fila por (nodo, hora, producto) y las dos fuentes.
+
+    `alinear=True` resta una hora a la marca de tiempo de ERA5 antes del merge,
+    para que las dos fuentes describan el MISMO intervalo físico (ver el
+    docstring del módulo: el NSRDB etiqueta el inicio y ERA5 el final). Es la
+    diferencia entre medir la discrepancia entre fuentes y medirla sumada a un
+    desplazamiento de un paso.
+
+    Conviene pensarlo como "reetiquetar ERA5", no como un `shift` con signo, que
+    es donde uno se equivoca: el valor de ERA5 rotulado 13:00 describe el
+    intervalo 12:00–13:00, que el NSRDB rotula 12:00.
+
+    La columna `alineado` marca la tabla resultante, para que una salida guardada
+    no se pueda leer luego sin saber en qué modo se calculó.
+    """
     partes = []
     for producto in productos:
         for anio in anios:
@@ -83,6 +145,13 @@ def cruzar(anios, meses, productos=("land", "single")) -> pd.DataFrame:
     # Defensa por si algún parquet viene de una versión anterior sin zona.
     era5["datetime_utc"] = pd.to_datetime(era5["datetime_utc"], utc=True)
 
+    if alinear:
+        # Reetiquetado, no desplazamiento del dato: el valor que ERA5 rotula
+        # 13:00 describe el intervalo 12:00-13:00, que es el que el NSRDB rotula
+        # 12:00. Se hace ANTES de calcular el rango para que el periodo que se le
+        # pide al NSRDB sea ya el de las etiquetas nuevas.
+        era5["datetime_utc"] -= pd.Timedelta(hours=1)
+
     lo = era5["datetime_utc"].min()
     hi = era5["datetime_utc"].max()
     nsrdb = cargar_nsrdb(sorted(era5["nodo_id"].unique()),
@@ -92,11 +161,23 @@ def cruzar(anios, meses, productos=("land", "single")) -> pd.DataFrame:
                    suffixes=("_era5", "_nsrdb"), how="inner")
     if j.empty:
         raise ValueError("El cruce quedó vacío: ¿coinciden los periodos?")
+    # Viaja con la tabla: una salida guardada no debe poder leerse después sin
+    # saber si las horas estaban alineadas o no.
+    j["alineado"] = bool(alinear)
     return j
 
 
 def metricas(j: pd.DataFrame, por=("producto", "nodo_id")) -> pd.DataFrame:
-    """Sesgo, MAE, RMSE y correlación de ERA5 respecto al NSRDB."""
+    """
+    Sesgo, MAE, RMSE y correlación de ERA5 respecto al NSRDB.
+
+    La columna `alineado` se arrastra desde `cruzar`: sin ella, dos tablas de
+    métricas calculadas en modos distintos son indistinguibles a simple vista y
+    difieren en un 37 % en el GHI.
+    """
+    # `False` cuando la tabla viene de una versión anterior, que es lo que
+    # aquellas hacían.
+    alineado = bool(j["alineado"].iloc[0]) if "alineado" in j else False
     filas = []
     for llaves, g in j.groupby(list(por), sort=True):
         llaves = llaves if isinstance(llaves, tuple) else (llaves,)
@@ -122,6 +203,7 @@ def metricas(j: pd.DataFrame, por=("producto", "nodo_id")) -> pd.DataFrame:
                 "rmse": float(np.sqrt(np.mean(d ** 2))),
                 "corr": corr,
                 "comparable": v not in NO_COMPARABLES,
+                "alineado": alineado,
                 "nota": NO_COMPARABLES.get(v, ""),
             })
     return pd.DataFrame(filas)
@@ -140,15 +222,28 @@ if __name__ == "__main__":
     ap.add_argument("--anios", nargs="+", type=int, default=[2024])
     ap.add_argument("--meses", nargs="+", type=int, default=[1])
     ap.add_argument("--productos", nargs="+", default=["land", "single"])
+    ap.add_argument("--alinear", action="store_true",
+                    help="reetiqueta ERA5 una hora atrás para que las dos "
+                         "fuentes describan el mismo intervalo (exacto en GHI, "
+                         "aproximado en las instantáneas). RECOMENDADO para "
+                         "medir la discrepancia real entre fuentes.")
     a = ap.parse_args()
 
     pd.set_option("display.width", 200)
-    j = cruzar(a.anios, a.meses, a.productos)
+    j = cruzar(a.anios, a.meses, a.productos, alinear=a.alinear)
     print(f"\n{len(j):,} horas cruzadas · {j['nodo_id'].nunique()} nodos · "
-          f"{j['datetime_utc'].min()} .. {j['datetime_utc'].max()}\n")
+          f"{j['datetime_utc'].min()} .. {j['datetime_utc'].max()}")
+    print(f"horas alineadas: {'SÍ' if a.alinear else 'NO'}\n")
     r = resumen(j)
     print(r[["producto", "variable", "n", "sesgo", "mae", "rmse", "corr",
              "comparable"]].round(3).to_string(index=False))
     print("\nNotas:")
     for v, nota in NO_COMPARABLES.items():
         print(f"  {v}: {nota}")
+    if not a.alinear:
+        # El aviso va al final, donde queda a la vista junto a la tabla que
+        # califica, y no arriba donde el scroll se lo lleva.
+        print("\n⚠ SIN ALINEAR: el NSRDB etiqueta el inicio del intervalo horario"
+              " y ERA5 el final,\n  así que estas cifras incluyen un desfase de un"
+              " paso y SOBRESTIMAN la\n  discrepancia (en GHI, ~37 %). Repite con"
+              " --alinear para medirla de verdad.")

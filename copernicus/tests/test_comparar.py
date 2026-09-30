@@ -137,3 +137,76 @@ def test_era5_land_se_parece_mas_al_nsrdb_que_single():
     r = K.resumen(j).set_index(["variable", "producto"])["rmse"]
     for v in ("temperature", "pressure"):
         assert r[(v, "land")] < r[(v, "single")], v
+
+
+# --------------------------------------------------------------------------- #
+# Alineación de la hora
+# --------------------------------------------------------------------------- #
+@integracion
+def test_alinear_reetiqueta_era5_una_hora_atras():
+    """
+    `alinear=True` resta una hora a la marca de ERA5 antes del merge: el valor
+    que ERA5 rotula 13:00 describe el intervalo 12:00-13:00, que el NSRDB rotula
+    12:00. Se comprueba sobre el dato, no sobre el índice: el GHI de ERA5 que
+    queda emparejado a una hora dada debe ser el que antes estaba una después.
+    """
+    crudo = K.cruzar([2024], [6], productos=("land",))
+    alineado = K.cruzar([2024], [6], productos=("land",), alinear=True)
+
+    a = crudo.set_index(["nodo_id", "datetime_utc"])["ghi_era5"]
+    b = alineado.set_index(["nodo_id", "datetime_utc"])["ghi_era5"]
+    # La serie cruda con su marca atrasada una hora tiene que ser, punto por
+    # punto, la alineada. Se compara entera y no un valor suelto: casi todas las
+    # horas del día son noche y un 0.0 == 0.0 pasaría sin probar nada.
+    desplazada = pd.Series(a.to_numpy(), index=pd.MultiIndex.from_arrays(
+        [a.index.get_level_values(0),
+         a.index.get_level_values(1) - pd.Timedelta(hours=1)]))
+    par = pd.concat([b.rename("alineado"),
+                     desplazada.rename("crudo_atrasado")], axis=1).dropna()
+
+    assert len(par) > 10_000, "el solape quedó demasiado corto para probar nada"
+    assert par["alineado"].equals(par["crudo_atrasado"])
+    assert par["alineado"].max() > 500, "sin horas de sol no se prueba el ciclo"
+
+
+@integracion
+def test_alinear_baja_el_rmse_del_ghi_y_deja_el_sesgo_donde_estaba():
+    """
+    El desfase es de emparejamiento, no de nivel: corregirlo tiene que bajar el
+    RMSE con fuerza (~37 % en GHI) y dejar el SESGO casi igual, porque desplazar
+    una serie en el tiempo no cambia su media.
+
+    Si al alinear se moviera también el sesgo, el problema sería otro y esta
+    corrección lo estaría tapando.
+    """
+    sin = K.resumen(K.cruzar([2024], [6], productos=("land",)))
+    con = K.resumen(K.cruzar([2024], [6], productos=("land",), alinear=True))
+    g_sin = sin[sin.variable == "ghi"].iloc[0]
+    g_con = con[con.variable == "ghi"].iloc[0]
+
+    assert g_con["rmse"] < g_sin["rmse"] * 0.75
+    assert g_con["corr"] > g_sin["corr"]
+    assert g_con["sesgo"] == pytest.approx(g_sin["sesgo"], abs=1.0)
+
+
+@integracion
+def test_el_modo_viaja_con_la_tabla():
+    """
+    Dos tablas de métricas calculadas en modos distintos son indistinguibles a
+    simple vista y difieren un 37 % en el GHI: la bandera tiene que ir dentro.
+    """
+    assert not K.cruzar([2024], [6], productos=("land",))["alineado"].any()
+    assert K.cruzar([2024], [6], productos=("land",), alinear=True)["alineado"].all()
+    m = K.metricas(K.cruzar([2024], [6], productos=("land",), alinear=True),
+                   por=("producto",))
+    assert m["alineado"].all()
+
+
+def test_las_tablas_viejas_sin_bandera_se_leen_como_no_alineadas():
+    """
+    Una tabla guardada antes de que existiera el parámetro no tiene la columna;
+    suponer `False` es lo que aquellas hacían, y suponer `True` las presentaría
+    como algo que no son.
+    """
+    m = K.metricas(_cruce_sintetico(2.0), por=("producto",))
+    assert not m["alineado"].any()

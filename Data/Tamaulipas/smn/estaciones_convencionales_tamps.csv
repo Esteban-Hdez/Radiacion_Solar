@@ -1,0 +1,200 @@
+clave,nombre,municipio,situacion,diario,mensual,ext_hist,1961_1990,1971_2000,1981_2010,1991_2020,red,estado_carpeta,url_datos_diarios
+28001,Abasolo (Dge),Abasolo,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28001.txt
+28002,Ahualulco,Gómez Farías,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28002.txt
+28003,Aldama (Dge),Aldama,Operando,Diario,Mensual,Ext-hist,,,,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28003.txt
+28004,Altamira (Smn),Altamira,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28004.txt
+28005,El Refugio (Smn),Antiguo Morelos,Suspendida,Diario,Mensual,Ext-hist,1961-1990,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28005.txt
+28006,Barberena,Altamira,Suspendida,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28006.txt
+28007,Barranco Azul,San Carlos,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28007.txt
+28008,Bellavista,El Mante,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28008.txt
+28009,Burgos (Dge),Burgos,Operando,Diario,Mensual,Ext-hist,,,,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28009.txt
+28010,Bustamante,Bustamante,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28010.txt
+28011,Fraccionamiento Callejones,Ocampo,Suspendida,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28011.txt
+28012,C.E.I. Ciudad Mante,El Mante,Suspendida,Diario,Mensual,Ext-hist,1961-1990,1971-2000,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28012.txt
+28014,S.J. 2-11 Camargo,Camargo,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28014.txt
+28015,Capitan Emilio Carranza,Llera,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28015.txt
+28016,Campo Experimental Cuauhtemoc,Altamira,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28016.txt
+28017,Campo Experimental Manuel Gonzalez,González,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28017.txt
+28019,Cruillas,Cruillas,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28019.txt
+28020,Corona,Güémez,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28020.txt
+28021,Corralejo,San Carlos,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28021.txt
+28022,Balcon De Moctezuma,Victoria,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28022.txt
+28023,Chamal Nuevo,Ocampo,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28023.txt
+28024,Cañon Del Diablo,Soto La Marina,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28024.txt
+28025,Ejido Tres De Mayo (Cfe),Altamira,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28025.txt
+28026,El Aguacate,González,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28026.txt
+28027,El Mulato,Burgos,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28027.txt
+28028,El Barretal I,Padilla,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28028.txt
+28029,El Mayab,González,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28029.txt
+28030,El Ocotillal,Jiménez,Suspendida,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28030.txt
+28031,El Oyul,Antiguo Morelos,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28031.txt
+28032,El Refugio (Dge),Antiguo Morelos,Operando,Diario,Mensual,Ext-hist,,,,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28032.txt
+28033,Francisco Castellanos,Llera,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28033.txt
+28034,Francisco Zorrilla,Jaumave,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28034.txt
+28035,Gonzalez,González,Suspendida,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28035.txt
+28036,Guemez,Güémez,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28036.txt
+28037,Hidalgo (Smn),Hidalgo,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28037.txt
+28038,Hidalgo (Dge),Hidalgo,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28038.txt
+28039,Jaumave (Smn),Jaumave,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28039.txt
+28040,Jaumave (Dge),Jaumave,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28040.txt
+28041,Jimenez,Jiménez,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28041.txt
+28042,Joya De Salas,Jaumave,Suspendida,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28042.txt
+28043,La Boquilla,Ocampo,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28043.txt
+28044,La Encantada,Llera,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28044.txt
+28045,La Encarnacion,Soto La Marina,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28045.txt
+28046,La Esperanza,Aldama,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28046.txt
+28047,La Loba,Jiménez,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28047.txt
+28048,Francisco Gonzalez Villarreal,San Fernando,Suspendida,Diario,Mensual,Ext-hist,1961-1990,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28048.txt
+28049,La Servilleta,El Mante,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28049.txt
+28050,La Sonadora,Padilla,Suspendida,Diario,Mensual,Ext-hist,1961-1990,1971-2000,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28050.txt
+28051,Las Alazanas,Jiménez,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28051.txt
+28052,Las Norias,San Fernando,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28052.txt
+28053,La Vega,Jaumave,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28053.txt
+28054,Esteros,Altamira,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28054.txt
+28055,Los Tomates,Altamira,Suspendida,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28055.txt
+28056,C.A.E. Llera,Llera,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28056.txt
+28057,Magiscatzin (Smn),González,Suspendida,Diario,Mensual,Ext-hist,1961-1990,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28057.txt
+28058,Magiscatzin (Dge),González,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28058.txt
+28059,Magueyes,Mainero,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28059.txt
+28060,Villa Mainero,Mainero,Suspendida,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28060.txt
+28062,Mendez,Méndez,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28062.txt
+28063,Miquihuana,Miquihuana,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28063.txt
+28064,Lazaro Cardenas,El Mante,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28064.txt
+28065,Nuevo Laredo,Nuevo Laredo,Suspendida,Diario,Mensual,Ext-hist,1961-1990,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28065.txt
+28066,Nuevo Morelos,Nuevo Morelos,Suspendida,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28066.txt
+28067,Presa Falcon,Guerrero,Suspendida,Diario,Mensual,Ext-hist,1961-1990,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28067.txt
+28069,Ocampo,Ocampo,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28069.txt
+28070,Padilla,Padilla,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28070.txt
+28071,Palmillas,Palmillas,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28071.txt
+28072,Paso Del Aura,Soto La Marina,Suspendida,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28072.txt
+28073,Paso Real De Guerrero,Jaumave,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28073.txt
+28074,Paso De Molina,Casas,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28074.txt
+28075,Plan De Ayala,Jaumave,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28075.txt
+28076,Pretil,González,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28076.txt
+28077,Puerto De Valles,Hidalgo,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28077.txt
+28078,Punta Jerez,Aldama,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28078.txt
+28079,Reynosa (Smn),Reynosa,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28079.txt
+28080,Rio Frio,El Mante,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28080.txt
+28081,Rosillo,González,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28081.txt
+28082,S.J. 3-48 Rio Bravo,Río Bravo,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28082.txt
+28083,Sabinas,Gómez Farías,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28083.txt
+28084,San Carlos,San Carlos,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28084.txt
+28085,San Felipe,El Mante,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28085.txt
+28086,San Fernando,San Fernando,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28086.txt
+28087,San Gabriel,Xicoténcatl,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28087.txt
+28088,San Jose De Las Rusias,Soto La Marina,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28088.txt
+28089,San Jose Del Verde,Casas,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28089.txt
+28090,El Novillo,Victoria,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28090.txt
+28091,San Pablo,Tula,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28091.txt
+28092,Soto La Marina (Obs),Soto La Marina,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28092.txt
+28093,S.J. 2-18 San Miguel,Camargo,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28093.txt
+28094,San Nicolas,San Nicolás,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28094.txt
+28095,S.J. 1-02 San Pedro,Miguel Alemán,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28095.txt
+28096,San Vicente,Jaumave,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28096.txt
+28097,Santa Elena,El Mante,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28097.txt
+28098,Santa Maria De Los Nogales,Casas,Suspendida,Diario,Mensual,Ext-hist,,1971-2000,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28098.txt
+28099,S.J. 2-09 Camargo,Camargo,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28099.txt
+28100,S.J. 2-18 Gustavo Diaz Ordaz,Gustavo Díaz Ordaz,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28100.txt
+28101,S.J. 2-33 Reynosa,Reynosa,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28101.txt
+28102,S.J. 2-38 Gustavo Diaz Ordaz,Gustavo Díaz Ordaz,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28102.txt
+28103,S.J. 3-42 Reynosa,Reynosa,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28103.txt
+28104,S.J. 3-47 Rio Bravo,Río Bravo,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28104.txt
+28105,S.J. 3-55 Reynosa,Reynosa,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28105.txt
+28106,S.J. 3-58 Reynosa,Reynosa,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28106.txt
+28107,S.J. 3-60 Reynosa,Reynosa,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28107.txt
+28108,S.J. 3-63 Tapon,Río Bravo,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28108.txt
+28110,Tampico (Obs),Altamira,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28110.txt
+28111,Tampico,Tampico,Suspendida,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28111.txt
+28112,Tancasneque,González,Suspendida,Diario,Mensual,Ext-hist,1961-1990,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28112.txt
+28113,Tenacitas,Soto La Marina,Suspendida,Diario,Mensual,Ext-hist,,1971-2000,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28113.txt
+28114,Tula,Tula,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28114.txt
+28115,Los Uvalle,Miquihuana,Operando,Diario,Mensual,Ext-hist,1961-1990,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28115.txt
+28116,Ciudad Victoria (Dge),Victoria,Suspendida,Diario,Mensual,Ext-hist,1961-1990,1971-2000,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28116.txt
+28117,Villagran (Dge),Villagrán,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28117.txt
+28118,Villagran (Smn),Villagrán,Suspendida,Diario,Mensual,Ext-hist,1961-1990,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28118.txt
+28119,Aldama (Smn),Aldama,Suspendida,Diario,Mensual,Ext-hist,1961-1990,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28119.txt
+28120,Xicotencatl,Xicoténcatl,Suspendida,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28120.txt
+28121,S.J. 2-23 Valadez,Gustavo Díaz Ordaz,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28121.txt
+28122,Abasolo (Smn),Abasolo,Suspendida,Diario,Mensual,Ext-hist,1961-1990,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28122.txt
+28123,Burgos (Smn),Burgos,Suspendida,Diario,Mensual,Ext-hist,1961-1990,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28123.txt
+28125,Nueva Apolonia,El Mante,Suspendida,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28125.txt
+28127,Ciudad Victoria (Smn),Victoria,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28127.txt
+28128,Reynosa (Dge),Reynosa,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28128.txt
+28130,El Barranco,Altamira,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28130.txt
+28131,Matamoros,Matamoros,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28131.txt
+28133,Las Norias,González,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28133.txt
+28135,Atotonilco,González,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28135.txt
+28136,Gomez Farias,Gómez Farías,Suspendida,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28136.txt
+28137,Las Animas,González,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28137.txt
+28138,Tancol,Tampico,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28138.txt
+28139,El Refugio,El Mante,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28139.txt
+28145,El Apuro,Aldama,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28145.txt
+28146,E.T.A. 167 Tomatan,Victoria,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28146.txt
+28147,Tamesi,González,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28147.txt
+28148,El Barretal Ii,Padilla,Operando,Diario,Mensual,Ext-hist,,1971-2000,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28148.txt
+28149,El Pilon,San Carlos,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28149.txt
+28150,La Alberca,Llera,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28150.txt
+28151,Presa Vicente Guerrero,Padilla,Operando,Diario,Mensual,Ext-hist,,1971-2000,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28151.txt
+28152,Soto La Marina,Soto La Marina,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28152.txt
+28154,Republica Española,Soto La Marina,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28154.txt
+28155,S.J. 1-02 Miguel Aleman,Miguel Alemán,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28155.txt
+28156,E.T.A. 067 Ciudad Mante,El Mante,Operando,Diario,Mensual,Ext-hist,,1971-2000,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28156.txt
+28160,Las Lajitas,Soto La Marina,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28160.txt
+28161,Presa La Patria,Abasolo,Suspendida,Diario,Mensual,Ext-hist,,1971-2000,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28161.txt
+28163,El Carrizal,Aldama,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28163.txt
+28164,La Angostura,Llera,Operando,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28164.txt
+28165,Ciudad Victoria (Obs),Victoria,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28165.txt
+28167,Lopez Rayon,González,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28167.txt
+28169,Los Troncones,Victoria,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28169.txt
+28170,San Marcos,Victoria,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28170.txt
+28171,Sierra Madre,Victoria,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28171.txt
+28172,S.J. 2-00 Presa Diaz Ordaz,Gustavo Díaz Ordaz,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28172.txt
+28175,Altamira (Dge),Altamira,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28175.txt
+28176,Las Antonias,Bustamante,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28176.txt
+28178,La Cañada,Llera,Operando,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28178.txt
+28179,Carrizos,Hidalgo,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28179.txt
+28180,El Encinal,Jiménez,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28180.txt
+28182,La Libertad,San Carlos,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28182.txt
+28183,Magdaleno Aguilar,Jaumave,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28183.txt
+28184,Mariano Escobedo,Hidalgo,Operando,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28184.txt
+28185,Maria Teresa,Casas,Operando,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28185.txt
+28186,El Mirador,Padilla,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28186.txt
+28188,Palo Solo,San Fernando,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28188.txt
+28189,Pedro Ruiz Molina,Tula,Operando,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28189.txt
+28190,El Piruli,Casas,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28190.txt
+28191,Presa Pedro J. Mendez,Hidalgo,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28191.txt
+28192,Puerto Rico,San Carlos,Operando,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28192.txt
+28193,La Reforma,Jaumave,Operando,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28193.txt
+28194,San Isidro,Hidalgo,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28194.txt
+28195,San Lorenzo,Xicoténcatl,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28195.txt
+28196,La Cabecera,Aldama,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28196.txt
+28197,San Jose De Las Flores,Güémez,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28197.txt
+28198,Garza Valdez,Villagrán,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28198.txt
+28199,Guadalupe,San Carlos,Operando,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28199.txt
+28200,El Lajal,González,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28200.txt
+28201,El Nacimiento,Aldama,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28201.txt
+28202,Lazaro Cardenas,Burgos,Operando,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28202.txt
+28203,Santa Juana,Altamira,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28203.txt
+28204,San Francisco,San Fernando,Operando,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28204.txt
+28206,El Chijol,Aldama,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28206.txt
+28207,La Chona,San Carlos,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28207.txt
+28209,Conrado Castillo,Villagrán,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28209.txt
+28210,Charco Largo,Soto La Marina,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28210.txt
+28213,Laguna De San Juan,San Fernando,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28213.txt
+28214,Lucio Blanco,Villagrán,Operando,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28214.txt
+28215,La Mision,Jiménez,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28215.txt
+28216,Palo Blanco,Cruillas,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28216.txt
+28217,Ejido Graciano Sanchez,San Carlos,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28217.txt
+28218,La Boca,Victoria,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28218.txt
+28219,El Encino,Llera,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28219.txt
+28220,General Felipe Angeles,Llera,Operando,Diario,Mensual,Ext-hist,,,,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28220.txt
+28221,Lavin,Casas,Suspendida,Diario,Mensual,Ext-hist,,,1981-2010,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28221.txt
+28222,San Francisco,Casas,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28222.txt
+28223,El Sarnoso,Burgos,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28223.txt
+28226,Cinco De Febrero,Casas,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28226.txt
+28263,La Pesca,Soto La Marina,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28263.txt
+28264,Villa Cardenas (B:R:B:1-4),Jiménez,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28264.txt
+28400,Gallos Grandes,Tula,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28400.txt
+28402,Rancho Veintidos De Diciembre,Soto La Marina,Suspendida,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28402.txt
+28404,Santa Isabel,Soto La Marina,Operando,Diario,Mensual,Ext-hist,,,,,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28404.txt
+28405,Saca De Agua,El Mante,Operando,Diario,Mensual,Ext-hist,,,1981-2010,1991-2020,convencional,tamps,https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios/tamps/dia28405.txt

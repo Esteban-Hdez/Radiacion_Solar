@@ -7,10 +7,23 @@ fuentes.
 ```bash
 conda run -n rs python -m copernicus.descarga --disponibilidad 2025
 conda run -n rs python -m copernicus.descarga --prueba          # un mes, ambos
-conda run -n rs python -m copernicus.descarga --producto land   # todo
-conda run -n rs python -m copernicus.extraer --producto land --consolidar
+conda run -n rs python -m copernicus.descarga --producto land --anios 2020 2021 2022 2023 2024 2025
+conda run -n rs python -m copernicus.extraer  --producto land --anios 2020 2021 2022 2023 2024 2025 --consolidar
 conda run -n rs pytest copernicus/tests -q
 ```
+
+> **Estado**: descargado y extraído **2020–2025 completo** en los dos productos
+> (72 meses × 2, sin huecos). `Data/Tamaulipas/era5/<producto>/series/<producto>_completo.parquet`
+> son 2 262 144 filas = 43 nodos × 52 608 horas.
+>
+> Para **graficar** la comparación contra el NSRDB está `copernicus.graficas`;
+> los ejemplos y la documentación, en
+> [`notebooks/comparacion_fuentes/`](../notebooks/comparacion_fuentes/README.md).
+
+> Ojo con el log cuando la descarga corre en segundo plano: `conda run`
+> bufferiza la salida y el archivo se queda vacío hasta que el proceso termina.
+> Para vigilar un trabajo de horas hay que invocar el intérprete directo,
+> `~/miniconda3/envs/rs/bin/python -u -m copernicus.descarga …`.
 
 ## Por qué se llama `copernicus` y no `era5`
 
@@ -107,29 +120,61 @@ incidencias, **ningún nodo necesitó celda de respaldo** (ninguno cayó en mar)
 | distancia nodo→celda, mediana | **4.2 km** | 9.7 km |
 | distancia máxima | 6.9 km | 15.8 km |
 
-RMSE de ERA5 respecto al NSRDB, promediado sobre los 43 nodos:
+RMSE de ERA5 respecto al NSRDB, promediado sobre los 43 nodos, **con las horas
+alineadas** (`--alinear`, ver más abajo):
+
+```bash
+conda run -n rs python -m copernicus.comparar --anios 2024 --meses 1 --alinear
+```
 
 | variable | land | single | mejora de land |
 |---|---|---|---|
-| presión (mbar) | **8.05** | 12.90 | 37.6 % |
-| temperatura (°C) | **2.94** | 3.44 | 14.5 % |
-| punto de rocío (°C) | **2.67** | 2.76 | 3.3 % |
-| GHI (W/m²) | 111.53 | 111.82 | 0.3 % |
+| presión (mbar) | **7.92** | 12.80 | 38.1 % |
+| temperatura (°C) | **2.35** | 2.78 | 15.3 % |
+| punto de rocío (°C) | **2.58** | 2.67 | 3.2 % |
+| GHI (W/m²) | 78.87 | 79.03 | 0.2 % |
+
+> **Qué cambió respecto a la versión anterior de esta tabla.** Estaba medida sin
+> alinear la hora. Las dos fuentes están en UTC, pero etiquetan el intervalo en
+> extremos opuestos: el NSRDB con el inicio (`12:00` = promedio de 12:00–13:00)
+> y ERA5 con el final (`13:00` = acumulado de 12:00 a 13:00), así que el merge
+> emparejaba cada hora de ERA5 con la siguiente del NSRDB.
+>
+> | variable | sin alinear | alineado |
+> |---|---|---|
+> | GHI (W/m²) | 111.53 | **78.87** |
+> | temperatura (°C) | 2.94 | **2.35** |
+> | punto de rocío (°C) | 2.67 | 2.58 |
+> | presión (mbar) | 8.05 | 7.92 |
+>
+> El GHI baja un **29 %** y la temperatura un 20 %; la presión apenas se mueve,
+> porque es una variable suave que una hora no cambia. **Las conclusiones de
+> abajo se mantienen**: el orden entre productos y la ventaja de `land` en las
+> variables de terreno son los mismos, solo que sin el desfase sumado encima.
+>
+> En el GHI la corrección es exacta (viene de la acumulación de `ssrd`); en las
+> instantáneas (`t2m`, `sp`, viento) el desajuste real es de media hora y no se
+> resuelve con datos horarios, así que ahí alinear mejora pero no deja exacto.
+> Detalle y evidencia en
+> [`notebooks/comparacion_fuentes/`](../notebooks/comparacion_fuentes/README.md),
+> sección 0.
 
 Dos lecturas que salen de aquí:
 
 - **La resolución fina gana donde manda el terreno.** El sesgo de presión
   correlaciona con la altitud del nodo (r = −0.48): Jaumave (752 m), Ocampo
   (363 m) y Miquihuana (1946 m) son los peores, porque la orografía de la celda
-  no coincide con la del punto. En temperatura la ganancia es menor (14.5 %) y
+  no coincide con la del punto. En temperatura la ganancia es menor (15.3 %) y
   en GHI, nula.
-- **En GHI los dos productos empatan** (RMSE ~112 W/m², correlación 0.88). Tiene
+- **En GHI los dos productos empatan** (RMSE ~79 W/m², correlación 0.94). Tiene
   sentido: la irradiancia a esta escala la manda la nubosidad, no el relieve, y
   ahí NSRDB parte de observación satelital mientras ERA5 la modela. Es
   justamente la diferencia entre fuentes que se quería medir.
 
 El sesgo del viento sale positivo (+0.4 m/s en land, +0.6 en single) como se
-esperaba del desfase 10 m vs 2 m; no debe leerse como error del reanálisis.
+esperaba del desfase 10 m vs 2 m; no debe leerse como error del reanálisis. Es
+además insensible a la alineación —desplazar una serie no cambia su media—, que
+es justo lo que confirma que el desfase era de emparejamiento y no de nivel.
 
 ## Salidas
 

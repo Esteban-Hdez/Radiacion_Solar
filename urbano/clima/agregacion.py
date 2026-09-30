@@ -126,6 +126,14 @@ def _media_ponderada(df: pd.DataFrame, variables: list[str],
     dato; el cociente es la media de lo observado. Si se dividiera entre el peso
     total, una hora con un nodo faltante quedaría sesgada hacia abajo.
     """
+    if not variables:
+        # Se pidió SOLO una variable circular (`serie(["wind_direction"])`): no
+        # hay nada que promediar aquí, pero quien llama espera el esqueleto de
+        # llaves para unirle la dirección. Devolver el DataFrame vacío de
+        # `pd.DataFrame({})` lo dejaría además sin esas columnas, y el merge de
+        # `serie_horaria` moría con KeyError: 'cvegeo'.
+        return df[llaves].drop_duplicates().sort_values(llaves).reset_index(drop=True)
+
     salida = {}
     peso = df["peso"].to_numpy()
     for v in variables:
